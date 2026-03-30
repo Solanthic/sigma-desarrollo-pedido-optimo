@@ -1,0 +1,222 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "Playwright logo Playwright" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Playwright logo" [ref=e9]
+          - generic [ref=e10]: Playwright
+        - link "Docs" [ref=e11] [cursor=pointer]:
+          - /url: /docs/intro
+        - link "API" [ref=e12] [cursor=pointer]:
+          - /url: /docs/api/class-playwright
+        - button "Node.js" [ref=e14] [cursor=pointer]
+        - link "Community" [ref=e15] [cursor=pointer]:
+          - /url: /community/welcome
+      - generic [ref=e16]:
+        - link "GitHub repository" [ref=e17] [cursor=pointer]:
+          - /url: https://github.com/microsoft/playwright
+        - link "Discord server" [ref=e18] [cursor=pointer]:
+          - /url: https://aka.ms/playwright/discord
+        - button "Switch between dark and light mode (currently system mode)" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+        - button "Search (Command+K)" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]:
+            - img [ref=e26]
+            - generic [ref=e28]: Search
+          - generic [ref=e29]:
+            - generic [ref=e30]: ⌘
+            - generic [ref=e31]: K
+  - generic [ref=e32]:
+    - banner [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Playwright enables reliable end-to-end testing for modern web apps." [level=1] [ref=e35]
+        - generic [ref=e36]:
+          - link "Get started" [ref=e37] [cursor=pointer]:
+            - /url: /docs/intro
+          - generic [ref=e38]:
+            - link "Star microsoft/playwright on GitHub" [ref=e39] [cursor=pointer]:
+              - /url: https://github.com/microsoft/playwright
+              - text: Star
+            - link "84k+ stargazers on GitHub" [ref=e41] [cursor=pointer]:
+              - /url: https://github.com/microsoft/playwright/stargazers
+              - text: 84k+
+    - main [ref=e42]:
+      - img "Browsers (Chromium, Firefox, WebKit)" [ref=e44]
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - heading "Any browser • Any platform • One API" [level=3] [ref=e49]
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: Cross-browser. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox.
+            - paragraph [ref=e52]: Cross-platform. Test on Windows, Linux, and macOS, locally or on CI, headless or headed.
+            - paragraph [ref=e53]:
+              - text: Cross-language. Use the Playwright API in
+              - link "TypeScript" [ref=e54] [cursor=pointer]:
+                - /url: https://playwright.dev/docs/intro
+              - text: ","
+              - link "JavaScript" [ref=e55] [cursor=pointer]:
+                - /url: https://playwright.dev/docs/intro
+              - text: ","
+              - link "Python" [ref=e56] [cursor=pointer]:
+                - /url: https://playwright.dev/python/docs/intro
+              - text: ","
+              - link ".NET" [ref=e57] [cursor=pointer]:
+                - /url: https://playwright.dev/dotnet/docs/intro
+              - text: ","
+              - link "Java" [ref=e58] [cursor=pointer]:
+                - /url: https://playwright.dev/java/docs/intro
+              - text: .
+            - paragraph [ref=e59]: Test Mobile Web. Native mobile emulation of Google Chrome for Android and Mobile Safari. The same rendering engine works on your Desktop and in the Cloud.
+        - generic [ref=e60]:
+          - heading [level=3]
+        - generic [ref=e61]:
+          - heading [level=3]
+        - generic [ref=e62]:
+          - heading "Resilient • No flaky tests" [level=3] [ref=e63]
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: Auto-wait. Playwright waits for elements to be actionable prior to performing actions. It also has a rich set of introspection events. The combination of the two eliminates the need for artificial timeouts - the primary cause of flaky tests.
+            - paragraph [ref=e66]: Web-first assertions. Playwright assertions are created specifically for the dynamic web. Checks are automatically retried until the necessary conditions are met.
+            - paragraph [ref=e67]: Tracing. Configure test retry strategy, capture execution trace, videos, screenshots to eliminate flakes.
+        - generic [ref=e68]:
+          - heading "No trade-offs • No limits" [level=3] [ref=e69]
+          - generic [ref=e70]:
+            - paragraph [ref=e71]: Browsers run web content belonging to different origins in different processes. Playwright is aligned with the modern browsers architecture and runs tests out-of-process. This makes Playwright free of the typical in-process test runner limitations.
+            - paragraph [ref=e72]: Multiple everything. Test scenarios that span multiple tabs, multiple origins and multiple users. Create scenarios with different contexts for different users and run them against your server, all in one test.
+            - paragraph [ref=e73]: Trusted events. Hover elements, interact with dynamic controls, produce trusted events. Playwright uses real browser input pipeline indistinguishable from the real user.
+            - paragraph [ref=e74]: Test frames, pierce Shadow DOM. Playwright selectors pierce shadow DOM and allow entering frames seamlessly.
+        - generic [ref=e75]:
+          - heading [level=3]
+        - generic [ref=e76]:
+          - heading [level=3]
+        - generic [ref=e77]:
+          - heading "Full isolation • Fast execution" [level=3] [ref=e78]
+          - generic [ref=e79]:
+            - paragraph [ref=e80]: Browser contexts. Playwright creates a browser context for each test. Browser context is equivalent to a brand new browser profile. This delivers full test isolation with zero overhead. Creating a new browser context only takes a handful of milliseconds.
+            - paragraph [ref=e81]: Log in once. Save the authentication state of the context and reuse it in all the tests. This bypasses repetitive log-in operations in each test, yet delivers full isolation of independent tests.
+        - generic [ref=e82]:
+          - heading "Powerful Tooling" [level=3] [ref=e83]
+          - generic [ref=e84]:
+            - paragraph [ref=e85]:
+              - link "Codegen." [ref=e87] [cursor=pointer]:
+                - /url: docs/codegen
+              - text: Generate tests by recording your actions. Save them into any language.
+            - paragraph [ref=e88]:
+              - link "Playwright inspector." [ref=e90] [cursor=pointer]:
+                - /url: docs/debug#playwright-inspector
+              - text: Inspect page, generate selectors, step through the test execution, see click points, explore execution logs.
+            - paragraph [ref=e91]:
+              - link "Trace Viewer." [ref=e93] [cursor=pointer]:
+                - /url: docs/trace-viewer-intro
+              - text: Capture all the information to investigate the test failure. Playwright trace contains test execution screencast, live DOM snapshots, action explorer, test source, and many more.
+      - generic [ref=e97]:
+        - heading "Chosen by companies and open source projects" [level=2] [ref=e98]
+        - list [ref=e99]:
+          - listitem [ref=e100]:
+            - link "VS Code" [ref=e101] [cursor=pointer]:
+              - /url: https://code.visualstudio.com
+              - img "VS Code" [ref=e102]
+          - listitem [ref=e103]:
+            - link "Bing" [ref=e104] [cursor=pointer]:
+              - /url: https://bing.com
+              - img "Bing" [ref=e105]
+          - listitem [ref=e106]:
+            - link "Outlook" [ref=e107] [cursor=pointer]:
+              - /url: https://outlook.com
+              - img "Outlook" [ref=e108]
+          - listitem [ref=e109]:
+            - link "Disney+ Hotstar" [ref=e110] [cursor=pointer]:
+              - /url: https://www.hotstar.com/
+              - img "Disney+ Hotstar" [ref=e111]
+          - listitem [ref=e112]:
+            - link "Material UI" [ref=e113] [cursor=pointer]:
+              - /url: https://github.com/mui-org/material-ui
+              - img "Material UI" [ref=e114]
+          - listitem [ref=e115]:
+            - link "ING" [ref=e116] [cursor=pointer]:
+              - /url: https://github.com/ing-bank/lion
+              - img "ING" [ref=e117]
+          - listitem [ref=e118]:
+            - link "Adobe" [ref=e119] [cursor=pointer]:
+              - /url: https://github.com/adobe/spectrum-web-components
+              - img "Adobe" [ref=e120]
+          - listitem [ref=e121]:
+            - link "React Navigation" [ref=e122] [cursor=pointer]:
+              - /url: https://github.com/react-navigation/react-navigation
+              - img "React Navigation" [ref=e123]
+          - listitem [ref=e124]:
+            - link "Accessibility Insights" [ref=e125] [cursor=pointer]:
+              - /url: https://accessibilityinsights.io/
+              - img "Accessibility Insights" [ref=e126]
+  - contentinfo [ref=e127]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e131]: Learn
+          - list [ref=e132]:
+            - listitem [ref=e133]:
+              - link "Getting started" [ref=e134] [cursor=pointer]:
+                - /url: /docs/intro
+            - listitem [ref=e135]:
+              - link "Playwright Training" [ref=e136] [cursor=pointer]:
+                - /url: https://learn.microsoft.com/en-us/training/modules/build-with-playwright/
+                - text: Playwright Training
+                - img [ref=e137]
+            - listitem [ref=e139]:
+              - link "Learn Videos" [ref=e140] [cursor=pointer]:
+                - /url: /community/learn-videos
+            - listitem [ref=e141]:
+              - link "Feature Videos" [ref=e142] [cursor=pointer]:
+                - /url: /community/feature-videos
+        - generic [ref=e143]:
+          - generic [ref=e144]: Community
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - link "Stack Overflow" [ref=e147] [cursor=pointer]:
+                - /url: https://stackoverflow.com/questions/tagged/playwright
+                - text: Stack Overflow
+                - img [ref=e148]
+            - listitem [ref=e150]:
+              - link "Discord" [ref=e151] [cursor=pointer]:
+                - /url: https://aka.ms/playwright/discord
+                - text: Discord
+                - img [ref=e152]
+            - listitem [ref=e154]:
+              - link "Twitter" [ref=e155] [cursor=pointer]:
+                - /url: https://twitter.com/playwrightweb
+                - text: Twitter
+                - img [ref=e156]
+            - listitem [ref=e158]:
+              - link "LinkedIn" [ref=e159] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/playwrightweb
+                - text: LinkedIn
+                - img [ref=e160]
+        - generic [ref=e162]:
+          - generic [ref=e163]: More
+          - list [ref=e164]:
+            - listitem [ref=e165]:
+              - link "GitHub" [ref=e166] [cursor=pointer]:
+                - /url: https://github.com/microsoft/playwright
+                - text: GitHub
+                - img [ref=e167]
+            - listitem [ref=e169]:
+              - link "YouTube" [ref=e170] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UC46Zj8pDH5tDosqm1gd7WTg
+                - text: YouTube
+                - img [ref=e171]
+            - listitem [ref=e173]:
+              - link "Blog" [ref=e174] [cursor=pointer]:
+                - /url: https://dev.to/playwright
+                - text: Blog
+                - img [ref=e175]
+            - listitem [ref=e177]:
+              - link "Ambassadors" [ref=e178] [cursor=pointer]:
+                - /url: /community/ambassadors
+            - listitem [ref=e179]:
+              - link "Microsoft Privacy Statement" [ref=e180] [cursor=pointer]:
+                - /url: https://go.microsoft.com/fwlink/?LinkId=521839
+                - text: Microsoft Privacy Statement
+                - img [ref=e181]
+      - generic [ref=e184]: Copyright © 2026 Microsoft
