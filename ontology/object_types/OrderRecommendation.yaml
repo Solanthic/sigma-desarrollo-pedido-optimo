@@ -1,0 +1,179 @@
+apiName: OrderRecommendation
+displayName: "Order Recommendation (Recomendacion de Pedido)"
+pluralDisplayName: "Order Recommendations"
+description: >
+  The live ordering recommendation for each store-SKU combination. One record
+  per active store-SKU, always reflecting the latest pipeline run. The pipeline
+  computes ALL recommendation variables for ALL retailers — push/cut quantity,
+  forecast level, gap analysis. Operations and automations then selectively act
+  on specific variables depending on the retailer and process.
+
+  When the pipeline overwrites a recommendation, the previous state is
+  snapshotted into RecommendationHistory.
+titleProperty: recommendationId
+primaryKey: recommendationId
+status: ACTIVE
+
+lifecycle:
+  states: [pending, reviewed, accepted, rejected, overridden, executed, expired]
+  initialState: pending
+
+properties:
+  # ── Identity ──────────────────────────────────────────────
+  recommendationId:
+    type: String
+    description: "Synthetic primary key: {sapCode}_{sku} (one per active store-SKU, always current)"
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: null
+
+  sapCode:
+    type: String
+    description: "SAP store identifier. Foreign key to Store."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: Sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier. Foreign key to Product."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: Sku
+
+  computeDate:
+    type: Date
+    description: "Date when this recommendation was last computed."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: pipeline execution date
+
+  # ── Inventory Position (inputs to the recommendation) ─────
+  projectedOnHand:
+    type: Integer
+    description: "Projected inventory: current OH + in-transit pieces."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: OH_proyectado
+
+  targetInventory:
+    type: Integer
+    description: "Optimal inventory level based on inventory policy and sales velocity."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Inventario_sugerido
+
+  inventoryGap:
+    type: Integer
+    description: "Target minus projected. Positive = understocked, negative = overstocked. The core signal."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Inventario_sugerido - OH_proyectado
+
+  customerOrderPieces:
+    type: Integer
+    description: "What the retailer actually ordered for this store-SKU."
+    required: false
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: Piezas_pedido
+
+  # ── Recommendation Variables (computed for ALL retailers) ──
+  classificationType:
+    type: String
+    description: "Overall classification: push (understocked), cut (overstocked), hold (balanced)."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: derived from inventoryGap and wasteClassification
+
+  pushQuantity:
+    type: Integer
+    description: "Recommended additional pieces to order. Q-FRESCOS 33% reduction applied. Zero for cut/hold."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Piezas_empuje
+
+  cutFlag:
+    type: Boolean
+    description: "True when high waste classification (not Ok/Alta) AND overstocked. Signals: do not load more."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: No_cargar_pedido
+
+  recommendedForecastLevel:
+    type: Integer
+    description: "Recommended forecast level in pieces for this store-SKU. Used primarily for Walmart where Sigma can influence the retailer's forecast. Derived from targetInventory and sales trends."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: derived from targetInventory and sales velocity
+
+  promotionPushQuantity:
+    type: Integer
+    description: "Additional push driven by active promotional objectives (cabeceras)."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Empuje_cabecera
+
+  priority:
+    type: Integer
+    description: "1 = push + flagship, 2 = push + non-flagship, 0 = no push."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Prioridad
+
+  # ── Decision / Lifecycle ──────────────────────────────────
+  status:
+    type: String
+    description: "Lifecycle state: pending, reviewed, accepted, rejected, overridden, executed, expired."
+    required: true
+    sourceMapping:
+      table: null
+      notes: "Initialized as pending. Changed by actions."
+
+  decidedBy:
+    type: String
+    description: "User or AI agent who made the last decision."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by actions"
+
+  decidedAt:
+    type: Timestamp
+    description: "When the last decision was made."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by actions"
+
+  overrideQuantity:
+    type: Integer
+    description: "Manually-set quantity replacing pushQuantity, if overridden."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by OverrideOrderQuantity action"
+
+  decisionNotes:
+    type: String
+    description: "Justification for the decision."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by actions"
+
+tags:
+  - computed

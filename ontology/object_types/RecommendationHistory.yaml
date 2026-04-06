@@ -1,0 +1,141 @@
+apiName: RecommendationHistory
+displayName: "Recommendation History (Historial de Recomendaciones)"
+pluralDisplayName: "Recommendation History Records"
+description: >
+  Append-only audit trail of all ordering recommendations. One record per
+  store-SKU-day. Captures what the pipeline recommended, what decision was
+  made, and by whom. Never modified after creation — when a new pipeline run
+  overwrites CurrentRecommendation, the previous state is snapshotted here.
+
+  Used for: performance tracking, decision auditing, model improvement,
+  compliance reporting, and closed-loop feedback analysis.
+titleProperty: historyId
+primaryKey: historyId
+status: ACTIVE
+
+properties:
+  historyId:
+    type: String
+    description: "Synthetic primary key: {sapCode}_{sku}_{computeDate}"
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: null
+      notes: "One record per store-SKU per pipeline run"
+
+  sapCode:
+    type: String
+    description: "SAP store identifier. Foreign key to Store."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: Sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier. Foreign key to Product."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: Sku
+
+  computeDate:
+    type: Date
+    description: "Date when this recommendation was computed."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: pipeline execution date
+
+  # ── Snapshot of what the pipeline recommended ─────────────
+  classificationType:
+    type: String
+    description: "push, cut, or hold."
+    required: true
+    sourceMapping:
+      table: pipeline_computed
+      column: derived
+
+  pushQuantity:
+    type: Integer
+    description: "Recommended push quantity at time of computation."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Piezas_empuje
+
+  projectedOnHand:
+    type: Integer
+    description: "Projected inventory at time of computation."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: OH_proyectado
+
+  targetInventory:
+    type: Integer
+    description: "Target inventory at time of computation."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Inventario_sugerido
+
+  priority:
+    type: Integer
+    description: "Priority at time of computation."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Prioridad
+
+  customerOrderPieces:
+    type: Integer
+    description: "What the retailer ordered on this date."
+    required: false
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: Piezas_pedido
+
+  # ── Snapshot of the decision that was made ────────────────
+  finalStatus:
+    type: String
+    description: "Final lifecycle state before archival: accepted, rejected, overridden, expired, executed."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Copied from CurrentRecommendation.status before pipeline overwrites it"
+
+  decidedBy:
+    type: String
+    description: "Who made the decision."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Copied from CurrentRecommendation.decidedBy"
+
+  decidedAt:
+    type: Timestamp
+    description: "When the decision was made."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Copied from CurrentRecommendation.decidedAt"
+
+  overrideQuantity:
+    type: Integer
+    description: "If overridden, the manually-set quantity."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Copied from CurrentRecommendation.overrideQuantity"
+
+  decisionNotes:
+    type: String
+    description: "Justification provided at decision time."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Copied from CurrentRecommendation.decisionNotes"
+
+tags:
+  - transactional

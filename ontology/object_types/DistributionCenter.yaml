@@ -1,0 +1,32 @@
+apiName: DistributionCenter
+displayName: "Distribution Center (CEDI)"
+pluralDisplayName: "Distribution Centers"
+description: >
+  A distribution center (CEDI) that serves a set of retail stores. Derived from
+  the distinct Cedi values in the store catalog. The CEDI is the primary scope filter
+  for pipeline execution (e.g. Cedi = 'Pachuca').
+titleProperty: cediName
+primaryKey: cediCode
+status: ACTIVE
+
+properties:
+  cediCode:
+    type: String
+    description: "Unique code identifying the distribution center"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cedi
+      notes: "Derived from distinct Cedi values in the store catalog"
+
+  cediName:
+    type: String
+    description: "Human-readable name of the distribution center"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cedi
+      notes: "Initially same as cediCode; may be enriched with a proper display name"
+
+tags:
+  - master-data

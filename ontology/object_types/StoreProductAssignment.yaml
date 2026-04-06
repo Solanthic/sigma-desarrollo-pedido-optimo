@@ -1,0 +1,216 @@
+apiName: StoreProductAssignment
+displayName: "Store-Product Assignment (Activo Tienda)"
+pluralDisplayName: "Store-Product Assignments"
+description: >
+  The central decision-making object for each store-SKU combination. Serves as
+  an object-backed link between Store and Product, carrying both editable
+  configuration (eligibility, operational flags) and pipeline-computed metrics
+  (sales, inventory, waste classification, inventory policy) that inform ordering decisions.
+
+  Two categories of properties:
+  - Configuration: editable by actions (activate/deactivate, edit parameters)
+  - Metrics: written by the pipeline on each run (read-only for users)
+titleProperty: assignmentId
+primaryKey: assignmentId
+status: ACTIVE
+
+properties:
+  # ── Identity ──────────────────────────────────────────────
+  assignmentId:
+    type: String
+    description: "Synthetic primary key: {sapCode}_{sku}"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: null
+      notes: "Synthetic key from sap + sku"
+
+  sapCode:
+    type: String
+    description: "SAP store identifier. Foreign key to Store."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier. Foreign key to Product."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: sku
+
+  # ── Configuration (editable by actions) ───────────────────
+  isActive:
+    type: Boolean
+    description: "Whether this store-SKU assignment is currently active for ordering."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: null
+      notes: "Presence in table = active. Managed by Activate/Deactivate actions."
+
+  operationFlag:
+    type: Boolean
+    description: "Whether the store can order this SKU via operations (true) or needs central intervention (false)."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: operacion
+
+  reactivationRequired:
+    type: Boolean
+    description: "Whether this combination needs reactivation review. Set by pipeline when absent from source."
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_activo_tienda
+      column: null
+      notes: "Derived from absence in table + operacion flag"
+
+  activatedBy:
+    type: String
+    description: "User who last activated this assignment."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by ActivateStoreProduct action"
+
+  activatedAt:
+    type: Timestamp
+    description: "When this assignment was last activated."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by ActivateStoreProduct action"
+
+  deactivatedBy:
+    type: String
+    description: "User who last deactivated this assignment."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by DeactivateStoreProduct or DeactivateStore action"
+
+  deactivatedAt:
+    type: Timestamp
+    description: "When this assignment was last deactivated."
+    required: false
+    sourceMapping:
+      table: null
+      notes: "Set by DeactivateStoreProduct or DeactivateStore action"
+
+  # ── Core Decision Metrics (pipeline-computed) ─────────────
+  #
+  # These 4 metrics are the minimum inputs to the push/cut/hold decision.
+  # All are recomputed on each pipeline run.
+
+  projectedOnHand:
+    type: Integer
+    description: "Projected inventory in pieces: current OH + in-transit. The 'what we have' side of the decision."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: OH_Piezas + Piezas_transito
+      notes: "OH_Piezas from mermas_autos_cabeceras_oh_SCAN (OH_kilos/Peso), transit from transitos.csv"
+
+  targetInventory:
+    type: Integer
+    description: "Target inventory level in pieces based on inventory policy and sales velocity. The 'what we should have' side."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Inventario_sugerido
+      notes: "Formula: (weeklyAvgSalesPieces / 7) x targetDaysOfSupply"
+
+  pushQuantity:
+    type: Integer
+    description: "Recommended additional pieces to order. Positive when target > projected and waste classification allows it. Q-FRESCOS products get 33% reduction applied."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Piezas_empuje
+
+  cutFlag:
+    type: Boolean
+    description: "True when waste is high (classification not Ok/Alta) AND projected > target. Signals: do not load additional inventory."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: No_cargar_pedido
+
+  # ── Inventory Policy (determines target inventory) ────────
+  #
+  # The waste classification from the source system determines the default
+  # days-of-supply policy. targetDaysOfSupply can be overridden by the
+  # OverrideInventoryPolicy action.
+
+  wasteClassification:
+    type: String
+    description: "Waste/loss classification from the source system: Ok, Alta, MuyAlta, Subcritica, Critica, Inconsistente. Determines the default inventory policy (targetDaysOfSupply)."
+    required: false
+    sourceMapping:
+      table: mermas_autos_test_pedido_sugerido
+      column: Tipo_merma
+
+  targetDaysOfSupply:
+    type: Integer
+    description: "Days of supply to carry. Default from wasteClassification (Ok=14, Alta=12, MuyAlta=10, Subcritica=8, Critica=7, Inconsistente=0). Can be overridden by OverrideInventoryPolicy action."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: derived from Tipo_merma mapping (or action override)
+
+  # ── Supporting Context Metrics (pipeline-computed) ────────
+
+  weeklyAvgSalesPieces:
+    type: Double
+    description: "Average weekly scanned sales in pieces. Context metric shown on field rep alerts."
+    required: false
+    sourceMapping:
+      table: Venta_scan_semanal_prom
+      column: Scan_pizas
+
+  wastePercent:
+    type: Double
+    description: "Waste percentage: (-DME / Vol_neto) x 100. Shown on cut alerts to justify the recommendation. Capped at 1000%."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: derived from mermas_autos_test_pedido_sugerido.DME and Vol_neto
+
+  priority:
+    type: Integer
+    description: "Alert priority: 1 = push + flagship SKU, 2 = push + non-flagship, 0 = no push."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: derived from pushQuantity > 0 and Sku_insignia.Top_venta
+
+  isFlagship:
+    type: Boolean
+    description: "Whether this SKU is a top-seller at this store. Drives priority assignment."
+    required: false
+    sourceMapping:
+      table: Sku_insignia
+      column: Top_venta
+
+  promotionTargetPieces:
+    type: Integer
+    description: "Promotion-driven push: additional pieces needed to meet promotional objective. Only set when an active cabecera exists."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: Empuje_cabecera
+      notes: "Formula: Objetivo_cabecera - OH_proyectado, when active promotion and deficit exists"
+
+  lastComputedAt:
+    type: Timestamp
+    description: "When the pipeline last computed metrics for this assignment. Data freshness indicator."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: pipeline execution timestamp
+
+tags:
+  - reference

@@ -1,0 +1,70 @@
+apiName: Promotion
+displayName: "Promotion (Cabecera Promocional)"
+pluralDisplayName: "Promotions"
+description: >
+  Promotional header objectives for a store-SKU combination. When a promotion is active (today falls
+  within the vigency date range), it drives header-based push recommendations (Empuje_cabecera)
+  by setting a target on-hand level that overrides the standard inventory policy calculation.
+titleProperty: promotionId
+primaryKey: promotionId
+status: ACTIVE
+
+properties:
+  promotionId:
+    type: String
+    description: "Synthetic unique identifier for this promotion, formatted as {sapCode}_{sku}"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: synthetic key from Sap, sku
+
+  sapCode:
+    type: String
+    description: "Store SAP code identifying the point of sale"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: Sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: sku
+
+  startDate:
+    type: Date
+    description: "Start date of the promotional vigency period"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: Inicio_vigencia
+
+  endDate:
+    type: Date
+    description: "End date of the promotional vigency period"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: Fin_vigencia
+
+  targetOnHand:
+    type: Integer
+    description: "Target on-hand inventory level in pieces for the duration of the promotion"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: Objetivo_OH
+
+  isActive:
+    type: Boolean
+    description: "Whether the promotion is currently active, derived from whether today falls within startDate and endDate"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cabeceras
+      column: derived from Inicio_vigencia and Fin_vigencia date range check
+
+tags:
+  - reference

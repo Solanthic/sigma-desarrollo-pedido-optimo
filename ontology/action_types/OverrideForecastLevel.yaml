@@ -1,0 +1,51 @@
+apiName: overrideForecastLevel
+displayName: "Override Forecast Level"
+description: >
+  Manually sets the recommended forecast level for a store-SKU recommendation.
+  Primarily used for Walmart, where Sigma can influence the retailer's forecast.
+  The override replaces the pipeline-computed recommendedForecastLevel.
+
+parameters:
+  recommendation:
+    type: ObjectType:OrderRecommendation
+    description: "The recommendation to override"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  newForecastLevel:
+    type: Integer
+    description: "New forecast level in pieces"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  justification:
+    type: String
+    description: "Why the forecast level is being adjusted"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: OrderRecommendation
+    target: recommendation
+    propertyChanges:
+      - property: recommendedForecastLevel
+        source: newForecastLevel
+      - property: status
+        value: "overridden"
+      - property: decidedBy
+        source: currentUser
+      - property: decidedAt
+        source: currentTimestamp
+      - property: decisionNotes
+        source: justification
+
+submissionCriteria:
+  - condition: "status must be pending, reviewed, or accepted"
+    failureMessage: "Only active recommendations can have their forecast overridden"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT
+  - AI_AGENT

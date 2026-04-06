@@ -1,0 +1,39 @@
+apiName: approveRecommendation
+displayName: "Approve Recommendation"
+description: >
+  Approves a pending or reviewed order recommendation, marking it as accepted.
+  Used by CEDI operations, management, or the AI agent to confirm that a
+  recommended order quantity should proceed to fulfillment.
+
+parameters:
+  recommendation:
+    type: ObjectType:OrderRecommendation
+    description: "The order recommendation to approve"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+
+rules:
+  - type: modifyObject
+    objectType: OrderRecommendation
+    target: recommendation
+    propertyChanges:
+      - property: status
+        value: "accepted"
+      - property: approvedBy
+        source: currentUser
+      - property: approvedAt
+        source: currentTimestamp
+
+submissionCriteria:
+  - condition: "status must be pending or reviewed"
+    failureMessage: "Only recommendations with status 'pending' or 'reviewed' can be approved"
+
+sideEffects:
+  - type: notification
+    description: "Sends a notification to the field rep assigned to the store"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT
+  - AI_AGENT

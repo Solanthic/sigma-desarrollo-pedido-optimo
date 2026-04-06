@@ -1,0 +1,252 @@
+links:
+  # ── Master Data Hierarchy ─────────────────────────────────
+  - apiName: productToProductLine
+    displayName: "Product -> ProductLine"
+    description: "Links a product to its product line. The line determines push reduction rules."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: Product
+      foreignKey: productLineId
+    to:
+      objectType: ProductLine
+
+  - apiName: storeToRetailChain
+    displayName: "Store -> RetailChain"
+    description: "Links a store to the retail chain that operates it. Drives execution routing and alert formatting."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: Store
+      foreignKey: retailChainId
+    to:
+      objectType: RetailChain
+
+  - apiName: storeToDistributionCenter
+    displayName: "Store -> DistributionCenter"
+    description: "Links a store to the distribution center (CEDI) that supplies it."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: Store
+      foreignKey: distributionCenterCode
+    to:
+      objectType: DistributionCenter
+
+  # ── Core Relationship (object-backed link) ────────────────
+  - apiName: storeProductAssignmentToStore
+    displayName: "StoreProductAssignment -> Store"
+    description: "Links a store-product assignment to the store it belongs to."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: StoreProductAssignment
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: storeProductAssignmentToProduct
+    displayName: "StoreProductAssignment -> Product"
+    description: "Links a store-product assignment to the product (SKU) it references."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: StoreProductAssignment
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  # ── Sell-Out (demand signal) ──────────────────────────────
+  - apiName: sellOutToStore
+    displayName: "SellOut -> Store"
+    description: "Links a sell-out record to the store where consumer sales occurred."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: SellOut
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: sellOutToProduct
+    displayName: "SellOut -> Product"
+    description: "Links a sell-out record to the product sold."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: SellOut
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  # ── Sell-In (supply signal) ───────────────────────────────
+  - apiName: sellInToStore
+    displayName: "SellIn -> Store"
+    description: "Links a sell-in record to the destination store."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: SellIn
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: sellInToProduct
+    displayName: "SellIn -> Product"
+    description: "Links a sell-in record to the product shipped."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: SellIn
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  - apiName: sellInToRetailChain
+    displayName: "SellIn -> RetailChain"
+    description: "Links a sell-in record to the retail chain that placed the order."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: SellIn
+      foreignKey: chainId
+    to:
+      objectType: RetailChain
+
+  # ── Recommendations (current + history) ───────────────────
+  - apiName: orderRecommendationToStore
+    displayName: "OrderRecommendation -> Store"
+    description: "Links the current recommendation to the target store."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: OrderRecommendation
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: orderRecommendationToProduct
+    displayName: "OrderRecommendation -> Product"
+    description: "Links the current recommendation to the target product."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: OrderRecommendation
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  - apiName: recommendationHistoryToStore
+    displayName: "RecommendationHistory -> Store"
+    description: "Links a historical recommendation to the store it targeted."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: RecommendationHistory
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: recommendationHistoryToProduct
+    displayName: "RecommendationHistory -> Product"
+    description: "Links a historical recommendation to the product it targeted."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: RecommendationHistory
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  # ── Promotions ────────────────────────────────────────────
+  - apiName: promotionToStore
+    displayName: "Promotion -> Store"
+    description: "Links a promotion to the store where it is active."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: Promotion
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: promotionToProduct
+    displayName: "Promotion -> Product"
+    description: "Links a promotion to the product being promoted."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: Promotion
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  # ── Alerts ────────────────────────────────────────────────
+  - apiName: inventoryAlertToStore
+    displayName: "InventoryAlert -> Store"
+    description: "Links an inventory alert to the store with detected misalignment."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: InventoryAlert
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  # ── Promotions & Context ───────────────────────────────────
+  - apiName: promotionalGridToStore
+    displayName: "PromotionalGrid -> Store"
+    description: "Links a promotional grid entry to the store."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: PromotionalGrid
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: promotionalGridToProduct
+    displayName: "PromotionalGrid -> Product"
+    description: "Links a promotional grid entry to the product."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: PromotionalGrid
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  - apiName: tradeActivityToStore
+    displayName: "TradeActivity -> Store"
+    description: "Links a trade activity to the store."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: TradeActivity
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  - apiName: tradeActivityToProduct
+    displayName: "TradeActivity -> Product"
+    description: "Links a trade activity to the product."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: TradeActivity
+      foreignKey: sku
+    to:
+      objectType: Product
+
+  - apiName: pendingNoteToStore
+    displayName: "PendingNote -> Store"
+    description: "Links a pending note to the store."
+    cardinality: many-to-one
+    implementation: foreign-key
+    from:
+      objectType: PendingNote
+      foreignKey: sapCode
+    to:
+      objectType: Store
+
+  # OrderingSchedule and ContactDirectory merged into Store as properties

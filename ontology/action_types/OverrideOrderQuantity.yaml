@@ -1,0 +1,48 @@
+apiName: overrideOrderQuantity
+displayName: "Override Order Quantity"
+description: >
+  Overrides the recommended delta quantity on an order recommendation.
+  Used by CEDI operations or management when the system-computed quantity
+  needs manual adjustment with a documented justification.
+
+parameters:
+  recommendation:
+    type: ObjectType:OrderRecommendation
+    description: "The order recommendation whose quantity will be overridden"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  newQuantity:
+    type: Integer
+    description: "The new order quantity to replace the computed delta"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  justification:
+    type: String
+    description: "Reason for overriding the recommended quantity"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: OrderRecommendation
+    target: recommendation
+    propertyChanges:
+      - property: deltaQuantity
+        source: newQuantity
+      - property: overriddenBy
+        source: currentUser
+      - property: overriddenAt
+        source: currentTimestamp
+      - property: isOverridden
+        value: true
+
+submissionCriteria:
+  - condition: "status must be pending or reviewed or accepted"
+    failureMessage: "Only recommendations with status 'pending', 'reviewed', or 'accepted' can have their quantity overridden"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT

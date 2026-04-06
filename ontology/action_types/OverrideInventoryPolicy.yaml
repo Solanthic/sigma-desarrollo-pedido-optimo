@@ -1,0 +1,51 @@
+apiName: overrideInventoryPolicy
+displayName: "Override Inventory Policy"
+description: >
+  Overrides the target days-of-supply for a specific store-SKU combination.
+  The default targetDaysOfSupply is derived from the waste classification
+  (Ok=14d, Alta=12d, etc.), but this action lets management or AI agents
+  set a custom value for a specific store-SKU.
+
+  Use case: "This store-SKU has wasteClassification=Ok (default 14 days),
+  but based on recent sales trends we want to carry only 10 days."
+
+  The override persists until cleared. The pipeline uses the override value
+  instead of the wasteClassification default when computing targetInventory.
+
+  Formula affected: targetInventory = (weeklyAvgSalesPieces / 7) x targetDaysOfSupply
+
+parameters:
+  assignment:
+    type: ObjectType:StoreProductAssignment
+    description: "The store-product assignment to override"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  newDaysOfSupply:
+    type: Integer
+    description: "New target days-of-supply (overrides the default from wasteClassification)"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  justification:
+    type: String
+    description: "Why this override is needed"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: StoreProductAssignment
+    target: assignment
+    propertyChanges:
+      - property: targetDaysOfSupply
+        source: newDaysOfSupply
+
+sideEffects:
+  - type: notification
+    description: "Notify CEDI ops that an inventory policy was overridden"
+
+permissions:
+  - MANAGEMENT
+  - AI_AGENT

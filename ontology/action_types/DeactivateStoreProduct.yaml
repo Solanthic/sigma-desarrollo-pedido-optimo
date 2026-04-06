@@ -1,0 +1,40 @@
+apiName: deactivateStoreProduct
+displayName: "Deactivate Store Product"
+description: >
+  Deactivates a store-product assignment, preventing the product from being
+  ordered for the store. Used by CEDI operations or management when a SKU
+  should no longer be stocked at a given location.
+
+parameters:
+  assignment:
+    type: ObjectType:StoreProductAssignment
+    description: "The store-product assignment to deactivate"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  deactivationReason:
+    type: String
+    description: "Reason for deactivating the store-product assignment"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: StoreProductAssignment
+    target: assignment
+    propertyChanges:
+      - property: isActive
+        value: false
+      - property: deactivatedBy
+        source: currentUser
+      - property: deactivatedAt
+        source: currentTimestamp
+
+submissionCriteria:
+  - condition: "isActive must be true"
+    failureMessage: "Only active store-product assignments can be deactivated"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT

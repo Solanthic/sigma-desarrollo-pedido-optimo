@@ -1,0 +1,78 @@
+apiName: Product
+displayName: "Product (SKU)"
+pluralDisplayName: "Products"
+description: >
+  A product (SKU) in the Sigma catalog. Contains product attributes and the weight
+  used for kilos-to-pieces conversion throughout the pipeline. Product line and format
+  drive special business rules (e.g. Q-FRESCOS push reduction, GRANEL detection).
+titleProperty: productName
+primaryKey: sku
+status: ACTIVE
+
+properties:
+  sku:
+    type: String
+    description: "Unique SKU identifier for the product"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Sku
+
+  productName:
+    type: String
+    description: "Human-readable product name"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Producto
+
+  family:
+    type: String
+    description: "Product family classification"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Familia
+
+  productLineId:
+    type: String
+    description: "Foreign key to ProductLine. Determines push reduction rules (e.g., Q-FRESCOS = 33% reduction)."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Linea
+
+  format:
+    type: String
+    description: "Product presentation/format (used for GRANEL detection)"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Presentacion
+
+  brand:
+    type: String
+    description: "Product brand"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Marca
+
+  weightKg:
+    type: Double
+    description: "Weight per piece in kilograms. Critical for kilos-to-pieces conversion (OH_kilos / Peso). Zero or NULL causes division errors."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Peso
+
+  isActive:
+    type: Boolean
+    description: "Whether this product is currently active in the Sigma catalog. Inactive products are excluded from recommendations."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: "(derived: all products in table are assumed active; deactivation managed via ontology action)"
+
+tags:
+  - master-data

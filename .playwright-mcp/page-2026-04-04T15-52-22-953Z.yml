@@ -1,0 +1,787 @@
+- generic [ref=e6]:
+  - button "Skip to content" [ref=e7] [cursor=pointer]:
+    - generic [ref=e8]: Skip to content
+  - generic [ref=e10]:
+    - generic [ref=e13]:
+      - button "Open Foundry sidebar" [ref=e16] [cursor=pointer]:
+        - img [ref=e20]
+      - generic [ref=e23]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /workspace/narrative
+          - img [ref=e27]
+        - button [ref=e29]:
+          - img [ref=e32]
+        - button [ref=e35]:
+          - img [ref=e38]
+        - button "Gift Icon" [ref=e40]:
+          - img "Gift Icon" [ref=e43]
+        - button [ref=e53]:
+          - img [ref=e56]
+        - link [ref=e58] [cursor=pointer]:
+          - /url: /workspace/compass
+          - img [ref=e61]
+        - link [ref=e63] [cursor=pointer]:
+          - /url: /workspace/hubble
+          - img [ref=e66]
+        - button [ref=e68]:
+          - img [ref=e71]
+        - generic [ref=e130]:
+          - link [ref=e132] [cursor=pointer]:
+            - /url: /workspace/compass
+            - img [ref=e135]
+          - generic [ref=e137]:
+            - link [ref=e141] [cursor=pointer]:
+              - /url: /workspace/monocle
+            - link [ref=e147] [cursor=pointer]:
+              - /url: /workspace/data-ingestion-app
+            - link [ref=e153] [cursor=pointer]:
+              - /url: /workspace/developer-branching/
+            - link [ref=e159] [cursor=pointer]:
+              - /url: /workspace/job-tracker/splash
+        - button [ref=e163]:
+          - generic [ref=e164]:
+            - img [ref=e166]
+            - img [ref=e170]
+      - generic [ref=e76]:
+        - button "AIP logo icon" [ref=e172]:
+          - img "AIP logo icon" [ref=e175]
+        - button [ref=e78]:
+          - img [ref=e81]
+        - button "AG" [ref=e179]:
+          - generic [ref=e181]: AG
+    - main "Main content" [ref=e90]:
+      - generic [ref=e95]:
+        - generic [ref=e183]:
+          - tablist [ref=e184]:
+            - tab "Home" [ref=e185] [cursor=pointer]:
+              - img [ref=e187]
+          - navigation "Breadcrumb" [ref=e191]:
+            - list [ref=e192]:
+              - listitem [ref=e193]:
+                - link "Navigate to /workspace/compass/view/ri.compass.main.folder.fa546392-d70f-428d-98a3-0c453997b49d" [ref=e203] [cursor=pointer]:
+                  - /url: /workspace/compass/view/ri.compass.main.folder.fa546392-d70f-428d-98a3-0c453997b49d
+                  - text: Sigma Alimentos
+              - listitem [ref=e204]:
+                - generic [ref=e206]:
+                  - generic [ref=e210]: Pedido_optimo_previo
+                  - checkbox "Remove from favorites" [checked] [ref=e211] [cursor=pointer]:
+                    - img "Remove from favorites" [ref=e212]
+          - button "1" [ref=e217] [cursor=pointer]:
+            - img [ref=e219]
+            - generic [ref=e221]: "1"
+        - generic [ref=e106]:
+          - generic [ref=e224]:
+            - generic [ref=e227]: Enter description…
+            - tablist [ref=e231]:
+              - tab "Cover page 1" [ref=e232] [cursor=pointer]:
+                - generic [ref=e233]:
+                  - generic [ref=e234]:
+                    - img [ref=e236]
+                    - text: Cover page
+                  - button "1" [ref=e240]:
+                    - img [ref=e242]
+                    - generic [ref=e244]: "1"
+            - tablist [ref=e248]:
+              - tab "Files" [expanded] [selected] [ref=e249] [cursor=pointer]:
+                - generic [ref=e251]:
+                  - img [ref=e253]
+                  - text: Files
+              - tab "Autosaved" [ref=e255] [cursor=pointer]:
+                - generic [ref=e257]:
+                  - img [ref=e259]
+                  - text: Autosaved
+              - tab "References" [ref=e261] [cursor=pointer]:
+                - generic [ref=e262]:
+                  - generic [ref=e263]:
+                    - img [ref=e265]
+                    - text: References
+                  - img [ref=e269]
+              - tab "File references" [ref=e271] [cursor=pointer]:
+                - generic [ref=e273]: File references
+              - tab "External references" [ref=e274] [cursor=pointer]:
+                - generic [ref=e276]: External references
+              - tab "Trash" [ref=e277] [cursor=pointer]:
+                - generic [ref=e279]:
+                  - img [ref=e281]
+                  - text: Trash
+            - tablist [ref=e285]:
+              - tab "Project usage" [ref=e286] [cursor=pointer]:
+                - generic [ref=e287]:
+                  - generic [ref=e288]:
+                    - img [ref=e290]
+                    - text: Project usage
+                  - img [ref=e293]
+              - tab "Access graph" [active] [ref=e295] [cursor=pointer]:
+                - generic [ref=e296]:
+                  - generic [ref=e297]:
+                    - img [ref=e299]
+                    - text: Access graph
+                  - img [ref=e302]
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - generic [ref=e307]:
+                - img [ref=e309]
+                - generic [ref=e311]: Pinned
+                - generic [ref=e312]: The most important files in this project
+                - generic [ref=e314]: 0 items
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - link [ref=e318] [cursor=pointer]:
+                    - /url: view/ri.compass.main.folder.a5961ca6-692c-4d91-8b6b-5c55d0ec4a12
+                  - img [ref=e322]
+                  - navigation "Breadcrumb" [ref=e324]:
+                    - list [ref=e325]:
+                      - listitem [ref=e326]:
+                        - generic [ref=e327]:
+                          - generic [ref=e331]: Sqls_muestras
+                          - checkbox "Add to favorites" [ref=e332] [cursor=pointer]:
+                            - img "Add to favorites" [ref=e333]
+                          - button "1" [ref=e337] [cursor=pointer]:
+                            - img [ref=e339]
+                            - generic [ref=e341]: "1"
+                - generic [ref=e342]:
+                  - button "Actions" [ref=e344] [cursor=pointer]:
+                    - generic [ref=e345]: Actions
+                    - img [ref=e347]
+                  - button "New" [ref=e351] [cursor=pointer]:
+                    - img [ref=e353]
+                    - generic [ref=e355]: New
+                    - img [ref=e357]
+              - table [ref=e363]:
+                - row "Name Last updated Tags":
+                  - columnheader "Name" [ref=e364] [cursor=pointer]:
+                    - text: Name
+                    - img [ref=e366]
+                  - columnheader "Last updated" [ref=e368] [cursor=pointer]
+                  - columnheader "Tags" [ref=e369]
+                - rowgroup [ref=e371]:
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e6d809ab-3d8d-463e-a5c5-f08add4bff0d Add to favorites Wed, Apr 1, 2026, 10:20:43 AM" [ref=e372] [cursor=pointer]:
+                    - generic [ref=e374]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e6d809ab-3d8d-463e-a5c5-f08add4bff0d Add to favorites" [ref=e375]:
+                        - generic [ref=e382]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e6d809ab-3d8d-463e-a5c5-f08add4bff0d" [ref=e385]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.e6d809ab-3d8d-463e-a5c5-f08add4bff0d
+                            - text: actividad_trade.csv
+                          - checkbox "Add to favorites" [ref=e387]:
+                            - img "Add to favorites" [ref=e388]
+                      - cell "Wed, Apr 1, 2026, 10:20:43 AM" [ref=e390]:
+                        - generic [ref=e391]: Wed, Apr 1, 2026, 10:20:43 AM
+                      - cell [ref=e392]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bbcb7deb-5ae1-4c3d-802e-d0a2184ebaae Add to favorites Wed, Apr 1, 2026, 10:20:43 AM" [ref=e393] [cursor=pointer]:
+                    - generic [ref=e395]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bbcb7deb-5ae1-4c3d-802e-d0a2184ebaae Add to favorites" [ref=e396]:
+                        - generic [ref=e403]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bbcb7deb-5ae1-4c3d-802e-d0a2184ebaae" [ref=e406]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.bbcb7deb-5ae1-4c3d-802e-d0a2184ebaae
+                            - text: Ajustes_Pedido.csv
+                          - checkbox "Add to favorites" [ref=e408]:
+                            - img "Add to favorites" [ref=e409]
+                      - cell "Wed, Apr 1, 2026, 10:20:43 AM" [ref=e411]:
+                        - generic [ref=e412]: Wed, Apr 1, 2026, 10:20:43 AM
+                      - cell [ref=e413]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.c767c2f0-71e8-4ab0-9700-da424d419257 Add to favorites Wed, Apr 1, 2026, 11:47:31 AM" [ref=e414] [cursor=pointer]:
+                    - generic [ref=e416]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.c767c2f0-71e8-4ab0-9700-da424d419257 Add to favorites" [ref=e417]:
+                        - generic [ref=e424]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.c767c2f0-71e8-4ab0-9700-da424d419257" [ref=e427]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.c767c2f0-71e8-4ab0-9700-da424d419257
+                            - text: Avance_celula.csv
+                          - checkbox "Add to favorites" [ref=e429]:
+                            - img "Add to favorites" [ref=e430]
+                      - cell "Wed, Apr 1, 2026, 11:47:31 AM" [ref=e432]:
+                        - generic [ref=e433]: Wed, Apr 1, 2026, 11:47:31 AM
+                      - cell [ref=e434]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.fbbaea5a-8aaa-44be-b6c0-f996676692e3 Add to favorites Wed, Apr 1, 2026, 11:47:31 AM" [ref=e435] [cursor=pointer]:
+                    - generic [ref=e437]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.fbbaea5a-8aaa-44be-b6c0-f996676692e3 Add to favorites" [ref=e438]:
+                        - generic [ref=e445]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.fbbaea5a-8aaa-44be-b6c0-f996676692e3" [ref=e448]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.fbbaea5a-8aaa-44be-b6c0-f996676692e3
+                            - text: Avance_tienda.csv
+                          - checkbox "Add to favorites" [ref=e450]:
+                            - img "Add to favorites" [ref=e451]
+                      - cell "Wed, Apr 1, 2026, 11:47:31 AM" [ref=e453]:
+                        - generic [ref=e454]: Wed, Apr 1, 2026, 11:47:31 AM
+                      - cell [ref=e455]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.42a61aa0-6343-4e29-84df-039ad6d3a986 Add to favorites Fri, Mar 27, 2026, 11:32:10 AM" [ref=e456] [cursor=pointer]:
+                    - generic [ref=e458]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.42a61aa0-6343-4e29-84df-039ad6d3a986 Add to favorites" [ref=e459]:
+                        - generic [ref=e466]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.42a61aa0-6343-4e29-84df-039ad6d3a986" [ref=e469]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.42a61aa0-6343-4e29-84df-039ad6d3a986
+                            - text: base.csv
+                          - checkbox "Add to favorites" [ref=e471]:
+                            - img "Add to favorites" [ref=e472]
+                      - cell "Fri, Mar 27, 2026, 11:32:10 AM" [ref=e474]:
+                        - generic [ref=e475]: Fri, Mar 27, 2026, 11:32:10 AM
+                      - cell [ref=e476]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b7aa784c-dfcb-462e-8763-f17e2c11e5cc Add to favorites Fri, Mar 27, 2026, 11:31:35 AM" [ref=e477] [cursor=pointer]:
+                    - generic [ref=e479]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b7aa784c-dfcb-462e-8763-f17e2c11e5cc Add to favorites" [ref=e480]:
+                        - generic [ref=e487]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b7aa784c-dfcb-462e-8763-f17e2c11e5cc" [ref=e490]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.b7aa784c-dfcb-462e-8763-f17e2c11e5cc
+                            - text: Base_mysql.xlsx
+                          - checkbox "Add to favorites" [ref=e492]:
+                            - img "Add to favorites" [ref=e493]
+                      - cell "Fri, Mar 27, 2026, 11:31:35 AM" [ref=e495]:
+                        - generic [ref=e496]: Fri, Mar 27, 2026, 11:31:35 AM
+                      - cell [ref=e497]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f0cc3c17-2593-4388-9231-dac335d2e121 Add to favorites Wed, Apr 1, 2026, 12:42:18 PM" [ref=e498] [cursor=pointer]:
+                    - generic [ref=e500]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f0cc3c17-2593-4388-9231-dac335d2e121 Add to favorites" [ref=e501]:
+                        - generic [ref=e508]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f0cc3c17-2593-4388-9231-dac335d2e121" [ref=e511]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.f0cc3c17-2593-4388-9231-dac335d2e121
+                            - text: cabeceras_ultimo_dia.csv
+                          - checkbox "Add to favorites" [ref=e513]:
+                            - img "Add to favorites" [ref=e514]
+                      - cell "Wed, Apr 1, 2026, 12:42:18 PM" [ref=e516]:
+                        - generic [ref=e517]: Wed, Apr 1, 2026, 12:42:18 PM
+                      - cell [ref=e518]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.6d3ba0a2-1fc9-429e-96b5-8ee24a412ea1 Add to favorites Wed, Apr 1, 2026, 12:42:16 PM" [ref=e519] [cursor=pointer]:
+                    - generic [ref=e521]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.6d3ba0a2-1fc9-429e-96b5-8ee24a412ea1 Add to favorites" [ref=e522]:
+                        - generic [ref=e529]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.6d3ba0a2-1fc9-429e-96b5-8ee24a412ea1" [ref=e532]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.6d3ba0a2-1fc9-429e-96b5-8ee24a412ea1
+                            - text: directorio_whatsapp.csv
+                          - checkbox "Add to favorites" [ref=e534]:
+                            - img "Add to favorites" [ref=e535]
+                      - cell "Wed, Apr 1, 2026, 12:42:16 PM" [ref=e537]:
+                        - generic [ref=e538]: Wed, Apr 1, 2026, 12:42:16 PM
+                      - cell [ref=e539]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.567fe735-ed59-4257-a47c-475d8202790b Add to favorites Wed, Apr 1, 2026, 12:42:16 PM" [ref=e540] [cursor=pointer]:
+                    - generic [ref=e542]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.567fe735-ed59-4257-a47c-475d8202790b Add to favorites" [ref=e543]:
+                        - generic [ref=e550]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.567fe735-ed59-4257-a47c-475d8202790b" [ref=e553]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.567fe735-ed59-4257-a47c-475d8202790b
+                            - text: Inventario_fantasma_AS.csv
+                          - checkbox "Add to favorites" [ref=e555]:
+                            - img "Add to favorites" [ref=e556]
+                      - cell "Wed, Apr 1, 2026, 12:42:16 PM" [ref=e558]:
+                        - generic [ref=e559]: Wed, Apr 1, 2026, 12:42:16 PM
+                      - cell [ref=e560]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.90cd8813-51b4-4b8b-a975-1c2a8fe27940 Add to favorites Wed, Apr 1, 2026, 12:42:13 PM" [ref=e561] [cursor=pointer]:
+                    - generic [ref=e563]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.90cd8813-51b4-4b8b-a975-1c2a8fe27940 Add to favorites" [ref=e564]:
+                        - generic [ref=e571]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.90cd8813-51b4-4b8b-a975-1c2a8fe27940" [ref=e574]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.90cd8813-51b4-4b8b-a975-1c2a8fe27940
+                            - text: Inventario_fisico.csv
+                          - checkbox "Add to favorites" [ref=e576]:
+                            - img "Add to favorites" [ref=e577]
+                      - cell "Wed, Apr 1, 2026, 12:42:13 PM" [ref=e579]:
+                        - generic [ref=e580]: Wed, Apr 1, 2026, 12:42:13 PM
+                      - cell [ref=e581]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.94004758-17d5-4660-a0f0-6f0cccdc40ee Add to favorites Wed, Apr 1, 2026, 12:42:13 PM" [ref=e582] [cursor=pointer]:
+                    - generic [ref=e584]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.94004758-17d5-4660-a0f0-6f0cccdc40ee Add to favorites" [ref=e585]:
+                        - generic [ref=e592]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.94004758-17d5-4660-a0f0-6f0cccdc40ee" [ref=e595]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.94004758-17d5-4660-a0f0-6f0cccdc40ee
+                            - text: KPI_City_Club.csv
+                          - checkbox "Add to favorites" [ref=e597]:
+                            - img "Add to favorites" [ref=e598]
+                      - cell "Wed, Apr 1, 2026, 12:42:13 PM" [ref=e600]:
+                        - generic [ref=e601]: Wed, Apr 1, 2026, 12:42:13 PM
+                      - cell [ref=e602]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce269331-0c77-40de-822e-f816b569f212 Add to favorites Wed, Apr 1, 2026, 12:42:13 PM" [ref=e603] [cursor=pointer]:
+                    - generic [ref=e605]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce269331-0c77-40de-822e-f816b569f212 Add to favorites" [ref=e606]:
+                        - generic [ref=e613]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce269331-0c77-40de-822e-f816b569f212" [ref=e616]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.ce269331-0c77-40de-822e-f816b569f212
+                            - text: KPI_Sams.csv
+                          - checkbox "Add to favorites" [ref=e618]:
+                            - img "Add to favorites" [ref=e619]
+                      - cell "Wed, Apr 1, 2026, 12:42:13 PM" [ref=e621]:
+                        - generic [ref=e622]: Wed, Apr 1, 2026, 12:42:13 PM
+                      - cell [ref=e623]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cbddb3b8-8e1f-48d0-8af0-b09cdbf8a3b0 Add to favorites Wed, Apr 1, 2026, 12:42:13 PM" [ref=e624] [cursor=pointer]:
+                    - generic [ref=e626]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cbddb3b8-8e1f-48d0-8af0-b09cdbf8a3b0 Add to favorites" [ref=e627]:
+                        - generic [ref=e634]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cbddb3b8-8e1f-48d0-8af0-b09cdbf8a3b0" [ref=e637]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.cbddb3b8-8e1f-48d0-8af0-b09cdbf8a3b0
+                            - text: mermas_autos.csv
+                          - checkbox "Add to favorites" [ref=e639]:
+                            - img "Add to favorites" [ref=e640]
+                      - cell "Wed, Apr 1, 2026, 12:42:13 PM" [ref=e642]:
+                        - generic [ref=e643]: Wed, Apr 1, 2026, 12:42:13 PM
+                      - cell [ref=e644]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.569221cc-aafc-4712-b934-838692dfeb5c Add to favorites Wed, Apr 1, 2026, 12:42:13 PM" [ref=e645] [cursor=pointer]:
+                    - generic [ref=e647]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.569221cc-aafc-4712-b934-838692dfeb5c Add to favorites" [ref=e648]:
+                        - generic [ref=e655]:
+                          - generic "mermas_autos_avance_actual.csv" [ref=e656]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.569221cc-aafc-4712-b934-838692dfeb5c" [ref=e658]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.569221cc-aafc-4712-b934-838692dfeb5c
+                              - text: mermas_autos_avance_actual.csv
+                          - checkbox "Add to favorites" [ref=e660]:
+                            - img "Add to favorites" [ref=e661]
+                      - cell "Wed, Apr 1, 2026, 12:42:13 PM" [ref=e663]:
+                        - generic [ref=e664]: Wed, Apr 1, 2026, 12:42:13 PM
+                      - cell [ref=e665]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f7447c3c-17ff-4c2d-8f81-157aaca8bdda Add to favorites Wed, Apr 1, 2026, 12:42:10 PM" [ref=e666] [cursor=pointer]:
+                    - generic [ref=e668]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f7447c3c-17ff-4c2d-8f81-157aaca8bdda Add to favorites" [ref=e669]:
+                        - generic [ref=e676]:
+                          - generic "mermas_autos_avance_anterior.csv" [ref=e677]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f7447c3c-17ff-4c2d-8f81-157aaca8bdda" [ref=e679]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.f7447c3c-17ff-4c2d-8f81-157aaca8bdda
+                              - text: mermas_autos_avance_anterior.csv
+                          - checkbox "Add to favorites" [ref=e681]:
+                            - img "Add to favorites" [ref=e682]
+                      - cell "Wed, Apr 1, 2026, 12:42:10 PM" [ref=e684]:
+                        - generic [ref=e685]: Wed, Apr 1, 2026, 12:42:10 PM
+                      - cell [ref=e686]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.46e1de7f-d6c4-41c9-a41a-83c334c58281 Add to favorites Wed, Apr 1, 2026, 12:42:10 PM" [ref=e687] [cursor=pointer]:
+                    - generic [ref=e689]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.46e1de7f-d6c4-41c9-a41a-83c334c58281 Add to favorites" [ref=e690]:
+                        - generic [ref=e697]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.46e1de7f-d6c4-41c9-a41a-83c334c58281" [ref=e700]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.46e1de7f-d6c4-41c9-a41a-83c334c58281
+                            - text: mermas_autos_cabeceras.csv
+                          - checkbox "Add to favorites" [ref=e702]:
+                            - img "Add to favorites" [ref=e703]
+                      - cell "Wed, Apr 1, 2026, 12:42:10 PM" [ref=e705]:
+                        - generic [ref=e706]: Wed, Apr 1, 2026, 12:42:10 PM
+                      - cell [ref=e707]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.d9d192d4-896f-492a-a0bb-54937d8b1059 Add to favorites Wed, Apr 1, 2026, 12:42:11 PM" [ref=e708] [cursor=pointer]:
+                    - generic [ref=e710]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.d9d192d4-896f-492a-a0bb-54937d8b1059 Add to favorites" [ref=e711]:
+                        - generic [ref=e718]:
+                          - generic "mermas_autos_cabeceras_oh_SCAN.csv" [ref=e719]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.d9d192d4-896f-492a-a0bb-54937d8b1059" [ref=e721]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.d9d192d4-896f-492a-a0bb-54937d8b1059
+                              - text: mermas_autos_cabeceras_oh_SCAN.csv
+                          - checkbox "Add to favorites" [ref=e723]:
+                            - img "Add to favorites" [ref=e724]
+                      - cell "Wed, Apr 1, 2026, 12:42:11 PM" [ref=e726]:
+                        - generic [ref=e727]: Wed, Apr 1, 2026, 12:42:11 PM
+                      - cell [ref=e728]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.9beef581-2aa7-4c14-99b0-901f87e9923b Add to favorites Wed, Apr 1, 2026, 12:42:10 PM" [ref=e729] [cursor=pointer]:
+                    - generic [ref=e731]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.9beef581-2aa7-4c14-99b0-901f87e9923b Add to favorites" [ref=e732]:
+                        - generic [ref=e739]:
+                          - generic "mermas_autos_cat_activo_tienda.csv" [ref=e740]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.9beef581-2aa7-4c14-99b0-901f87e9923b" [ref=e742]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.9beef581-2aa7-4c14-99b0-901f87e9923b
+                              - text: mermas_autos_cat_activo_tienda.csv
+                          - checkbox "Add to favorites" [ref=e744]:
+                            - img "Add to favorites" [ref=e745]
+                      - cell "Wed, Apr 1, 2026, 12:42:10 PM" [ref=e747]:
+                        - generic [ref=e748]: Wed, Apr 1, 2026, 12:42:10 PM
+                      - cell [ref=e749]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b22d5aa1-3ad3-4566-81c4-b50f195e7611 Add to favorites Wed, Apr 1, 2026, 12:42:10 PM" [ref=e750] [cursor=pointer]:
+                    - generic [ref=e752]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b22d5aa1-3ad3-4566-81c4-b50f195e7611 Add to favorites" [ref=e753]:
+                        - generic [ref=e760]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.b22d5aa1-3ad3-4566-81c4-b50f195e7611" [ref=e763]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.b22d5aa1-3ad3-4566-81c4-b50f195e7611
+                            - text: mermas_autos_cat_sku.csv
+                          - checkbox "Add to favorites" [ref=e765]:
+                            - img "Add to favorites" [ref=e766]
+                      - cell "Wed, Apr 1, 2026, 12:42:10 PM" [ref=e768]:
+                        - generic [ref=e769]: Wed, Apr 1, 2026, 12:42:10 PM
+                      - cell [ref=e770]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cc23701e-fce5-456c-8770-f4731af5f029 Add to favorites Wed, Apr 1, 2026, 12:42:08 PM" [ref=e771] [cursor=pointer]:
+                    - generic [ref=e773]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cc23701e-fce5-456c-8770-f4731af5f029 Add to favorites" [ref=e774]:
+                        - generic [ref=e781]:
+                          - generic "mermas_autos_cat_sku_soriana.csv" [ref=e782]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cc23701e-fce5-456c-8770-f4731af5f029" [ref=e784]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.cc23701e-fce5-456c-8770-f4731af5f029
+                              - text: mermas_autos_cat_sku_soriana.csv
+                          - checkbox "Add to favorites" [ref=e786]:
+                            - img "Add to favorites" [ref=e787]
+                      - cell "Wed, Apr 1, 2026, 12:42:08 PM" [ref=e789]:
+                        - generic [ref=e790]: Wed, Apr 1, 2026, 12:42:08 PM
+                      - cell [ref=e791]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e019057e-efc0-4b54-ac1a-84db5e2e519c Add to favorites Wed, Apr 1, 2026, 12:42:08 PM" [ref=e792] [cursor=pointer]:
+                    - generic [ref=e794]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e019057e-efc0-4b54-ac1a-84db5e2e519c Add to favorites" [ref=e795]:
+                        - generic [ref=e802]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.e019057e-efc0-4b54-ac1a-84db5e2e519c" [ref=e805]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.e019057e-efc0-4b54-ac1a-84db5e2e519c
+                            - text: mermas_autos_cat_tienda.csv
+                          - checkbox "Add to favorites" [ref=e807]:
+                            - img "Add to favorites" [ref=e808]
+                      - cell "Wed, Apr 1, 2026, 12:42:08 PM" [ref=e810]:
+                        - generic [ref=e811]: Wed, Apr 1, 2026, 12:42:08 PM
+                      - cell [ref=e812]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.4e6b1bf6-caf9-4b50-9c2f-f0fc89276bac Add to favorites Wed, Apr 1, 2026, 12:42:08 PM" [ref=e813] [cursor=pointer]:
+                    - generic [ref=e815]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.4e6b1bf6-caf9-4b50-9c2f-f0fc89276bac Add to favorites" [ref=e816]:
+                        - generic [ref=e823]:
+                          - generic "mermas_autos_cat_tienda_celula.csv" [ref=e824]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.4e6b1bf6-caf9-4b50-9c2f-f0fc89276bac" [ref=e826]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.4e6b1bf6-caf9-4b50-9c2f-f0fc89276bac
+                              - text: mermas_autos_cat_tienda_celula.csv
+                          - checkbox "Add to favorites" [ref=e828]:
+                            - img "Add to favorites" [ref=e829]
+                      - cell "Wed, Apr 1, 2026, 12:42:08 PM" [ref=e831]:
+                        - generic [ref=e832]: Wed, Apr 1, 2026, 12:42:08 PM
+                      - cell [ref=e833]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ae8da39b-1dd8-4a2b-9750-99a20c83ac33 Add to favorites Wed, Apr 1, 2026, 12:42:08 PM" [ref=e834] [cursor=pointer]:
+                    - generic [ref=e836]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ae8da39b-1dd8-4a2b-9750-99a20c83ac33 Add to favorites" [ref=e837]:
+                        - generic [ref=e844]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ae8da39b-1dd8-4a2b-9750-99a20c83ac33" [ref=e847]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.ae8da39b-1dd8-4a2b-9750-99a20c83ac33
+                            - text: mermas_autos_fact_sem.csv
+                          - checkbox "Add to favorites" [ref=e849]:
+                            - img "Add to favorites" [ref=e850]
+                      - cell "Wed, Apr 1, 2026, 12:42:08 PM" [ref=e852]:
+                        - generic [ref=e853]: Wed, Apr 1, 2026, 12:42:08 PM
+                      - cell [ref=e854]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.87049f45-00ad-47e8-b95d-7c1e901b1d12 Add to favorites Wed, Apr 1, 2026, 12:42:08 PM" [ref=e855] [cursor=pointer]:
+                    - generic [ref=e857]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.87049f45-00ad-47e8-b95d-7c1e901b1d12 Add to favorites" [ref=e858]:
+                        - generic [ref=e865]:
+                          - generic "mermas_autos_ItemReview_TD.csv" [ref=e866]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.87049f45-00ad-47e8-b95d-7c1e901b1d12" [ref=e868]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.87049f45-00ad-47e8-b95d-7c1e901b1d12
+                              - text: mermas_autos_ItemReview_TD.csv
+                          - checkbox "Add to favorites" [ref=e870]:
+                            - img "Add to favorites" [ref=e871]
+                      - cell "Wed, Apr 1, 2026, 12:42:08 PM" [ref=e873]:
+                        - generic [ref=e874]: Wed, Apr 1, 2026, 12:42:08 PM
+                      - cell [ref=e875]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.5d3a4022-44e5-4299-a3e8-e9bdbe052673 Add to favorites Wed, Apr 1, 2026, 12:42:05 PM" [ref=e876] [cursor=pointer]:
+                    - generic [ref=e878]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.5d3a4022-44e5-4299-a3e8-e9bdbe052673 Add to favorites" [ref=e879]:
+                        - generic [ref=e886]:
+                          - generic "mermas_autos_lanzamientos.csv" [ref=e887]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.5d3a4022-44e5-4299-a3e8-e9bdbe052673" [ref=e889]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.5d3a4022-44e5-4299-a3e8-e9bdbe052673
+                              - text: mermas_autos_lanzamientos.csv
+                          - checkbox "Add to favorites" [ref=e891]:
+                            - img "Add to favorites" [ref=e892]
+                      - cell "Wed, Apr 1, 2026, 12:42:05 PM" [ref=e894]:
+                        - generic [ref=e895]: Wed, Apr 1, 2026, 12:42:05 PM
+                      - cell [ref=e896]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bddb60ff-3308-4532-8420-aaf5ac5e4737 Add to favorites Wed, Apr 1, 2026, 12:42:05 PM" [ref=e897] [cursor=pointer]:
+                    - generic [ref=e899]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bddb60ff-3308-4532-8420-aaf5ac5e4737 Add to favorites" [ref=e900]:
+                        - generic [ref=e907]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.bddb60ff-3308-4532-8420-aaf5ac5e4737" [ref=e910]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.bddb60ff-3308-4532-8420-aaf5ac5e4737
+                            - text: mermas_autos_pedido_excel.csv
+                          - checkbox "Add to favorites" [ref=e912]:
+                            - img "Add to favorites" [ref=e913]
+                      - cell "Wed, Apr 1, 2026, 12:42:05 PM" [ref=e915]:
+                        - generic [ref=e916]: Wed, Apr 1, 2026, 12:42:05 PM
+                      - cell [ref=e917]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cfcdb2e0-97ff-42cc-a279-5b85d9485b8d Add to favorites Wed, Apr 1, 2026, 12:42:05 PM" [ref=e918] [cursor=pointer]:
+                    - generic [ref=e920]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cfcdb2e0-97ff-42cc-a279-5b85d9485b8d Add to favorites" [ref=e921]:
+                        - generic [ref=e928]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.cfcdb2e0-97ff-42cc-a279-5b85d9485b8d" [ref=e931]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.cfcdb2e0-97ff-42cc-a279-5b85d9485b8d
+                            - text: mermas_autos_scan_sem.csv
+                          - checkbox "Add to favorites" [ref=e933]:
+                            - img "Add to favorites" [ref=e934]
+                      - cell "Wed, Apr 1, 2026, 12:42:05 PM" [ref=e936]:
+                        - generic [ref=e937]: Wed, Apr 1, 2026, 12:42:05 PM
+                      - cell [ref=e938]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.55b9f91b-2f96-4016-91e1-dfb00c5439b7 Add to favorites Wed, Apr 1, 2026, 12:42:05 PM" [ref=e939] [cursor=pointer]:
+                    - generic [ref=e941]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.55b9f91b-2f96-4016-91e1-dfb00c5439b7 Add to favorites" [ref=e942]:
+                        - generic [ref=e949]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.55b9f91b-2f96-4016-91e1-dfb00c5439b7" [ref=e952]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.55b9f91b-2f96-4016-91e1-dfb00c5439b7
+                            - text: mermas_autos_TC_Cat_sku.csv
+                          - checkbox "Add to favorites" [ref=e954]:
+                            - img "Add to favorites" [ref=e955]
+                      - cell "Wed, Apr 1, 2026, 12:42:05 PM" [ref=e957]:
+                        - generic [ref=e958]: Wed, Apr 1, 2026, 12:42:05 PM
+                      - cell [ref=e959]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f5211a3a-9c7f-404e-bd87-6a0df3804017 Add to favorites Wed, Apr 1, 2026, 12:42:05 PM" [ref=e960] [cursor=pointer]:
+                    - generic [ref=e962]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f5211a3a-9c7f-404e-bd87-6a0df3804017 Add to favorites" [ref=e963]:
+                        - generic [ref=e970]:
+                          - generic "mermas_autos_TC_Inventario_optimo.csv" [ref=e971]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.f5211a3a-9c7f-404e-bd87-6a0df3804017" [ref=e973]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.f5211a3a-9c7f-404e-bd87-6a0df3804017
+                              - text: mermas_autos_TC_Inventario_optimo.csv
+                          - checkbox "Add to favorites" [ref=e975]:
+                            - img "Add to favorites" [ref=e976]
+                      - cell "Wed, Apr 1, 2026, 12:42:05 PM" [ref=e978]:
+                        - generic [ref=e979]: Wed, Apr 1, 2026, 12:42:05 PM
+                      - cell [ref=e980]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce25b8b4-7845-4aae-a7b2-833acf762180 Add to favorites Wed, Apr 1, 2026, 12:42:02 PM" [ref=e981] [cursor=pointer]:
+                    - generic [ref=e983]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce25b8b4-7845-4aae-a7b2-833acf762180 Add to favorites" [ref=e984]:
+                        - generic [ref=e991]:
+                          - generic "mermas_autos_test_pedido_sugerido.csv" [ref=e992]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ce25b8b4-7845-4aae-a7b2-833acf762180" [ref=e994]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.ce25b8b4-7845-4aae-a7b2-833acf762180
+                              - text: mermas_autos_test_pedido_sugerido.csv
+                          - checkbox "Add to favorites" [ref=e996]:
+                            - img "Add to favorites" [ref=e997]
+                      - cell "Wed, Apr 1, 2026, 12:42:02 PM" [ref=e999]:
+                        - generic [ref=e1000]: Wed, Apr 1, 2026, 12:42:02 PM
+                      - cell [ref=e1001]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ced4faa-2ac6-4292-95f4-979bdba3505f Add to favorites Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1002] [cursor=pointer]:
+                    - generic [ref=e1004]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ced4faa-2ac6-4292-95f4-979bdba3505f Add to favorites" [ref=e1005]:
+                        - generic [ref=e1012]:
+                          - generic "mermas_autos_Tipo_merma_anual.csv" [ref=e1013]:
+                            - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ced4faa-2ac6-4292-95f4-979bdba3505f" [ref=e1015]:
+                              - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.0ced4faa-2ac6-4292-95f4-979bdba3505f
+                              - text: mermas_autos_Tipo_merma_anual.csv
+                          - checkbox "Add to favorites" [ref=e1017]:
+                            - img "Add to favorites" [ref=e1018]
+                      - cell "Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1020]:
+                        - generic [ref=e1021]: Wed, Apr 1, 2026, 12:42:02 PM
+                      - cell [ref=e1022]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0bb83998-74b2-4e2a-9029-82aef33798dd Add to favorites Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1023] [cursor=pointer]:
+                    - generic [ref=e1025]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0bb83998-74b2-4e2a-9029-82aef33798dd Add to favorites" [ref=e1026]:
+                        - generic [ref=e1033]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0bb83998-74b2-4e2a-9029-82aef33798dd" [ref=e1036]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.0bb83998-74b2-4e2a-9029-82aef33798dd
+                            - text: mermas_mes_calculo.csv
+                          - checkbox "Add to favorites" [ref=e1038]:
+                            - img "Add to favorites" [ref=e1039]
+                      - cell "Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1041]:
+                        - generic [ref=e1042]: Wed, Apr 1, 2026, 12:42:02 PM
+                      - cell [ref=e1043]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.01abe6e8-8ca8-4444-b6fb-e61809c4e44f Add to favorites Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1044] [cursor=pointer]:
+                    - generic [ref=e1046]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.01abe6e8-8ca8-4444-b6fb-e61809c4e44f Add to favorites" [ref=e1047]:
+                        - generic [ref=e1054]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.01abe6e8-8ca8-4444-b6fb-e61809c4e44f" [ref=e1057]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.01abe6e8-8ca8-4444-b6fb-e61809c4e44f
+                            - text: notas_pendientes.csv
+                          - checkbox "Add to favorites" [ref=e1059]:
+                            - img "Add to favorites" [ref=e1060]
+                      - cell "Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1062]:
+                        - generic [ref=e1063]: Wed, Apr 1, 2026, 12:42:02 PM
+                      - cell [ref=e1064]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.a3b46da5-971b-471c-85c4-771d66c8672e Add to favorites Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1065] [cursor=pointer]:
+                    - generic [ref=e1067]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.a3b46da5-971b-471c-85c4-771d66c8672e Add to favorites" [ref=e1068]:
+                        - generic [ref=e1075]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.a3b46da5-971b-471c-85c4-771d66c8672e" [ref=e1078]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.a3b46da5-971b-471c-85c4-771d66c8672e
+                            - text: parrrillas.csv
+                          - checkbox "Add to favorites" [ref=e1080]:
+                            - img "Add to favorites" [ref=e1081]
+                      - cell "Wed, Apr 1, 2026, 12:42:02 PM" [ref=e1083]:
+                        - generic [ref=e1084]: Wed, Apr 1, 2026, 12:42:02 PM
+                      - cell [ref=e1085]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ee91448-3317-45da-a946-580339f5100c Add to favorites Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1086] [cursor=pointer]:
+                    - generic [ref=e1088]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ee91448-3317-45da-a946-580339f5100c Add to favorites" [ref=e1089]:
+                        - generic [ref=e1096]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0ee91448-3317-45da-a946-580339f5100c" [ref=e1099]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.0ee91448-3317-45da-a946-580339f5100c
+                            - text: recurrencia.csv
+                          - checkbox "Add to favorites" [ref=e1101]:
+                            - img "Add to favorites" [ref=e1102]
+                      - cell "Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1104]:
+                        - generic [ref=e1105]: Wed, Apr 1, 2026, 12:42:00 PM
+                      - cell [ref=e1106]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.84a6679b-6fee-4e0a-a160-0ba4035c838c Add to favorites Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1107] [cursor=pointer]:
+                    - generic [ref=e1109]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.84a6679b-6fee-4e0a-a160-0ba4035c838c Add to favorites" [ref=e1110]:
+                        - generic [ref=e1117]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.84a6679b-6fee-4e0a-a160-0ba4035c838c" [ref=e1120]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.84a6679b-6fee-4e0a-a160-0ba4035c838c
+                            - text: Resultado_AA_AA_tienda.csv
+                          - checkbox "Add to favorites" [ref=e1122]:
+                            - img "Add to favorites" [ref=e1123]
+                      - cell "Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1125]:
+                        - generic [ref=e1126]: Wed, Apr 1, 2026, 12:42:00 PM
+                      - cell [ref=e1127]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.269fea72-fc39-4994-b99d-0e50056c5968 Add to favorites Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1128] [cursor=pointer]:
+                    - generic [ref=e1130]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.269fea72-fc39-4994-b99d-0e50056c5968 Add to favorites" [ref=e1131]:
+                        - generic [ref=e1138]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.269fea72-fc39-4994-b99d-0e50056c5968" [ref=e1141]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.269fea72-fc39-4994-b99d-0e50056c5968
+                            - text: Roles_pedido_nacional.csv
+                          - checkbox "Add to favorites" [ref=e1143]:
+                            - img "Add to favorites" [ref=e1144]
+                      - cell "Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1146]:
+                        - generic [ref=e1147]: Wed, Apr 1, 2026, 12:42:00 PM
+                      - cell [ref=e1148]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.3c640a59-8048-43b2-96d0-08c253b96a5a Add to favorites Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1149] [cursor=pointer]:
+                    - generic [ref=e1151]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.3c640a59-8048-43b2-96d0-08c253b96a5a Add to favorites" [ref=e1152]:
+                        - generic [ref=e1159]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.3c640a59-8048-43b2-96d0-08c253b96a5a" [ref=e1162]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.3c640a59-8048-43b2-96d0-08c253b96a5a
+                            - text: sell_in_as_diario.csv
+                          - checkbox "Add to favorites" [ref=e1164]:
+                            - img "Add to favorites" [ref=e1165]
+                      - cell "Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1167]:
+                        - generic [ref=e1168]: Wed, Apr 1, 2026, 12:42:00 PM
+                      - cell [ref=e1169]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.7c65b1a9-9d16-4826-8a10-5bcb6d91bf33 Add to favorites Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1170] [cursor=pointer]:
+                    - generic [ref=e1172]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.7c65b1a9-9d16-4826-8a10-5bcb6d91bf33 Add to favorites" [ref=e1173]:
+                        - generic [ref=e1180]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.7c65b1a9-9d16-4826-8a10-5bcb6d91bf33" [ref=e1183]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.7c65b1a9-9d16-4826-8a10-5bcb6d91bf33
+                            - text: sell_in_sell_out28.csv
+                          - checkbox "Add to favorites" [ref=e1185]:
+                            - img "Add to favorites" [ref=e1186]
+                      - cell "Wed, Apr 1, 2026, 12:42:00 PM" [ref=e1188]:
+                        - generic [ref=e1189]: Wed, Apr 1, 2026, 12:42:00 PM
+                      - cell [ref=e1190]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ebb7e801-fbfc-4131-b54c-61c332163b8c Add to favorites Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1191] [cursor=pointer]:
+                    - generic [ref=e1193]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ebb7e801-fbfc-4131-b54c-61c332163b8c Add to favorites" [ref=e1194]:
+                        - generic [ref=e1201]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.ebb7e801-fbfc-4131-b54c-61c332163b8c" [ref=e1204]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.ebb7e801-fbfc-4131-b54c-61c332163b8c
+                            - text: sell_out_oh_diarios_28.csv
+                          - checkbox "Add to favorites" [ref=e1206]:
+                            - img "Add to favorites" [ref=e1207]
+                      - cell "Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1209]:
+                        - generic [ref=e1210]: Wed, Apr 1, 2026, 12:41:57 PM
+                      - cell [ref=e1211]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0c33e11c-6cbc-4709-8c8e-8a38e1eb38ca Add to favorites Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1212] [cursor=pointer]:
+                    - generic [ref=e1214]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0c33e11c-6cbc-4709-8c8e-8a38e1eb38ca Add to favorites" [ref=e1215]:
+                        - generic [ref=e1222]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.0c33e11c-6cbc-4709-8c8e-8a38e1eb38ca" [ref=e1225]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.0c33e11c-6cbc-4709-8c8e-8a38e1eb38ca
+                            - text: Sku_bottom.csv
+                          - checkbox "Add to favorites" [ref=e1227]:
+                            - img "Add to favorites" [ref=e1228]
+                      - cell "Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1230]:
+                        - generic [ref=e1231]: Wed, Apr 1, 2026, 12:41:57 PM
+                      - cell [ref=e1232]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.40c0402f-1ac3-4531-9d24-53ad549cfd8f Add to favorites Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1233] [cursor=pointer]:
+                    - generic [ref=e1235]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.40c0402f-1ac3-4531-9d24-53ad549cfd8f Add to favorites" [ref=e1236]:
+                        - generic [ref=e1243]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.40c0402f-1ac3-4531-9d24-53ad549cfd8f" [ref=e1246]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.40c0402f-1ac3-4531-9d24-53ad549cfd8f
+                            - text: Sku_insignia.csv
+                          - checkbox "Add to favorites" [ref=e1248]:
+                            - img "Add to favorites" [ref=e1249]
+                      - cell "Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1251]:
+                        - generic [ref=e1252]: Wed, Apr 1, 2026, 12:41:57 PM
+                      - cell [ref=e1253]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.36b4199a-c68b-440b-86d3-e52c70b6f574 Add to favorites Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1254] [cursor=pointer]:
+                    - generic [ref=e1256]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.36b4199a-c68b-440b-86d3-e52c70b6f574 Add to favorites" [ref=e1257]:
+                        - generic [ref=e1264]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.36b4199a-c68b-440b-86d3-e52c70b6f574" [ref=e1267]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.36b4199a-c68b-440b-86d3-e52c70b6f574
+                            - text: top_tienda_nacional.csv
+                          - checkbox "Add to favorites" [ref=e1269]:
+                            - img "Add to favorites" [ref=e1270]
+                      - cell "Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1272]:
+                        - generic [ref=e1273]: Wed, Apr 1, 2026, 12:41:57 PM
+                      - cell [ref=e1274]
+                  - row "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.8678ca65-d3f4-4d93-bf11-c1b0e8143cf0 Add to favorites Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1275] [cursor=pointer]:
+                    - generic [ref=e1277]:
+                      - cell "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.8678ca65-d3f4-4d93-bf11-c1b0e8143cf0 Add to favorites" [ref=e1278]:
+                        - generic [ref=e1285]:
+                          - link "Navigate to /workspace/preview-app/ri.blobster.main.spreadsheet.8678ca65-d3f4-4d93-bf11-c1b0e8143cf0" [ref=e1288]:
+                            - /url: /workspace/preview-app/ri.blobster.main.spreadsheet.8678ca65-d3f4-4d93-bf11-c1b0e8143cf0
+                            - text: Venta_scan_semanal_prom.csv
+                          - checkbox "Add to favorites" [ref=e1290]:
+                            - img "Add to favorites" [ref=e1291]
+                      - cell "Wed, Apr 1, 2026, 12:41:57 PM" [ref=e1293]:
+                        - generic [ref=e1294]: Wed, Apr 1, 2026, 12:41:57 PM
+                      - cell [ref=e1295]
+            - generic [ref=e1299]:
+              - generic [ref=e1301]:
+                - button "Overview" [ref=e1303] [cursor=pointer]:
+                  - img [ref=e1305]
+                - button "Access" [ref=e1308] [cursor=pointer]:
+                  - img [ref=e1310]
+                - button "Activity" [ref=e1313] [cursor=pointer]:
+                  - img [ref=e1315]
+                - button "Resource queues" [ref=e1318] [cursor=pointer]:
+                  - img [ref=e1320]
+              - generic [ref=e1322]:
+                - generic [ref=e1323]:
+                  - generic [ref=e1324]:
+                    - generic [ref=e1325]: Overview
+                    - button "Close" [ref=e1327] [cursor=pointer]:
+                      - img [ref=e1329]
+                  - generic [ref=e1338]: Sqls_muestras
+                - generic [ref=e1339]:
+                  - generic [ref=e1340]:
+                    - generic [ref=e1342]: Description
+                    - generic [ref=e1346]: Enter description…
+                  - generic [ref=e1347]:
+                    - generic [ref=e1348]:
+                      - generic [ref=e1349]: Documentation
+                      - button "Add" [ref=e1350] [cursor=pointer]:
+                        - generic [ref=e1351]: Add
+                        - img [ref=e1353]
+                    - generic [ref=e1356]: No documentation
+                  - generic [ref=e1357]:
+                    - generic [ref=e1359]: Project point of contact
+                    - generic [ref=e1361]:
+                      - generic [ref=e1363]:
+                        - img [ref=e1365]
+                        - generic "Sigma Alimentos - Pedido_optimo_previo Owners" [ref=e1367]
+                      - button "Contact" [ref=e1369] [cursor=pointer]:
+                        - generic [ref=e1370]: Contact
+                  - generic [ref=e1371]:
+                    - generic [ref=e1373]: Metadata
+                    - generic [ref=e1374]:
+                      - generic [ref=e1375]:
+                        - generic [ref=e1376]: RID
+                        - generic [ref=e1378]:
+                          - textbox [ref=e1379]: ri.compass.main.folder.90cba314-920d-431a-8711-05a911e912b3
+                          - button "Copy to clipboard" [ref=e1382] [cursor=pointer]:
+                            - img [ref=e1384]
+                      - generic [ref=e1386]:
+                        - generic [ref=e1387]: Location
+                        - generic [ref=e1389]:
+                          - generic [ref=e1390]:
+                            - text: /
+                            - link "Sigma Alimentos-45c2b9" [ref=e1391] [cursor=pointer]:
+                              - /url: /workspace/compass/view/ri.compass.main.folder.fa546392-d70f-428d-98a3-0c453997b49d
+                            - text: /
+                            - link "Pedido_optimo_previo" [ref=e1392] [cursor=pointer]:
+                              - /url: /workspace/compass/view/ri.compass.main.folder.a5961ca6-692c-4d91-8b6b-5c55d0ec4a12
+                            - text: /
+                            - link "Sqls_muestras" [ref=e1393] [cursor=pointer]:
+                              - /url: /workspace/compass/view/ri.compass.main.folder.90cba314-920d-431a-8711-05a911e912b3
+                          - generic [ref=e1394]:
+                            - text: "|"
+                            - generic [ref=e1395]: Copy
+                      - generic [ref=e1396]:
+                        - generic [ref=e1397]: Space
+                        - generic [ref=e1398]: Sigma Alimentos-45c2b9
+                      - generic [ref=e1399]:
+                        - generic [ref=e1400]: Tags
+                        - generic [ref=e1403]: No tags
+                      - generic [ref=e1404]:
+                        - generic [ref=e1405]: Portfolio
+                        - generic [ref=e1406]: No portfolio
+                      - generic [ref=e1407]:
+                        - generic [ref=e1408]: Status
+                        - generic [ref=e1409]: No status
+                      - generic [ref=e1410]:
+                        - generic [ref=e1411]: Collections
+                        - generic [ref=e1412]: No collections
+                      - generic [ref=e1413]:
+                        - generic [ref=e1414]: Created
+                        - generic [ref=e1415]:
+                          - text: Mar 27, 2026, 11:29 AM by
+                          - generic "Enrique Guadalupe Morales Mercado" [ref=e1417]
+                      - generic [ref=e1418]:
+                        - generic [ref=e1419]: Last modified
+                        - generic [ref=e1420]:
+                          - text: Apr 1, 2026, 12:41 PM by
+                          - generic [ref=e1422]: Karla Lizeth Moreno Ortiz
+                      - generic [ref=e1423]:
+                        - generic [ref=e1425]:
+                          - text: Views
+                          - img [ref=e1429]
+                        - generic [ref=e1431]: "16"

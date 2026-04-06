@@ -1,0 +1,48 @@
+apiName: RetailChain
+displayName: "Retail Chain (Cadena)"
+pluralDisplayName: "Retail Chains"
+description: >
+  A retail chain that operates stores where Sigma products are sold.
+  Examples: Walmart, Soriana, Chedraui, Sam's Club. Chain identity drives
+  execution routing — each chain has different alert formats, ordering
+  processes, and field interaction models.
+titleProperty: chainName
+primaryKey: chainId
+status: ACTIVE
+
+properties:
+  chainId:
+    type: String
+    description: "Unique identifier for the retail chain"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cadena
+      notes: "Derived from distinct Cadena values"
+
+  chainName:
+    type: String
+    description: "Display name of the retail chain"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cadena
+
+  alertFormat:
+    type: String
+    description: "PDF alert format for this chain: full (multi-page with push/cut/headers/trade) or simplified (single-page push only)"
+    required: false
+    sourceMapping:
+      table: "(derived: Soriana=simplified, others=full)"
+      column: null
+
+  executionModel:
+    type: String
+    description: "How orders are executed for this chain: institutional (Walmart — variable adjustments via SAP), promoter (Soriana — mobile field interaction), hybrid (Chedraui), evaluation (Sam's Club)"
+    required: false
+    sourceMapping:
+      table: "(derived from DISCOVERY.md retailer profiles)"
+      column: null
+
+tags:
+  - master-data

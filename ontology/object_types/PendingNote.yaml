@@ -1,0 +1,62 @@
+apiName: PendingNote
+displayName: "Pending Note (Nota Pendiente)"
+pluralDisplayName: "Pending Notes"
+description: >
+  Pending credit and debit notes associated with stores. Displayed in PDF alerts in a dedicated section
+  to provide financial context to field teams. The total amount is aggregated per store. These notes
+  are informational and do not affect ordering logic.
+titleProperty: noteId
+primaryKey: noteId
+status: ACTIVE
+
+properties:
+  noteId:
+    type: String
+    description: "Unique identifier for this pending note, derived from the folio number"
+    required: true
+    sourceMapping:
+      table: notas_pendientes
+      column: folio
+
+  sapCode:
+    type: String
+    description: "Store SAP code identifying the point of sale. Requires CAST from subsidiaria string to integer for joins"
+    required: true
+    sourceMapping:
+      table: notas_pendientes
+      column: subsidiaria
+
+  noteDate:
+    type: Date
+    description: "Date of the pending note"
+    required: false
+    sourceMapping:
+      table: notas_pendientes
+      column: fecha
+
+  noteType:
+    type: String
+    description: "Type of note: credit or debit"
+    required: false
+    sourceMapping:
+      table: notas_pendientes
+      column: derived from note classification
+
+  comment:
+    type: String
+    description: "Comment or description for this note. Sourced from the mes (month) column which is repurposed as a comment field"
+    required: false
+    sourceMapping:
+      table: notas_pendientes
+      column: mes
+
+  amount:
+    type: Double
+    description: "Monetary amount of the pending note"
+    required: false
+    sourceMapping:
+      table: notas_pendientes
+      column: importe
+
+tags:
+  - transactional

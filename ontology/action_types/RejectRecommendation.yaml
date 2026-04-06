@@ -1,0 +1,43 @@
+apiName: rejectRecommendation
+displayName: "Reject Recommendation"
+description: >
+  Rejects a pending or reviewed order recommendation with a mandatory reason.
+  Used by CEDI operations, management, or the AI agent when the recommended
+  order should not proceed.
+
+parameters:
+  recommendation:
+    type: ObjectType:OrderRecommendation
+    description: "The order recommendation to reject"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  reason:
+    type: String
+    description: "Reason for rejecting the recommendation"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: OrderRecommendation
+    target: recommendation
+    propertyChanges:
+      - property: status
+        value: "rejected"
+      - property: rejectedBy
+        source: currentUser
+      - property: rejectedAt
+        source: currentTimestamp
+      - property: rejectionReason
+        source: reason
+
+submissionCriteria:
+  - condition: "status must be pending or reviewed"
+    failureMessage: "Only recommendations with status 'pending' or 'reviewed' can be rejected"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT
+  - AI_AGENT

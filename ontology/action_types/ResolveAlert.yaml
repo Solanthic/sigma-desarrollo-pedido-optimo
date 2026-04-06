@@ -1,0 +1,43 @@
+apiName: resolveAlert
+displayName: "Resolve Alert"
+description: >
+  Marks an inventory alert as resolved after the retailer-specific action has
+  been taken (forecast adjusted for Walmart, promoter dispatched for Soriana, etc.).
+  Requires notes describing what was done.
+
+parameters:
+  alert:
+    type: ObjectType:InventoryAlert
+    description: "The alert to resolve"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  resolutionNotes:
+    type: String
+    description: "What action was taken to resolve the inventory misalignment"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: InventoryAlert
+    target: alert
+    propertyChanges:
+      - property: status
+        value: "resolved"
+      - property: resolvedBy
+        source: currentUser
+      - property: resolvedAt
+        source: currentTimestamp
+      - property: resolutionNotes
+        source: resolutionNotes
+
+submissionCriteria:
+  - condition: "status must be acknowledged"
+    failureMessage: "Alert must be acknowledged before it can be resolved"
+
+permissions:
+  - FIELD_SALES
+  - CEDI_OPS
+  - AI_AGENT

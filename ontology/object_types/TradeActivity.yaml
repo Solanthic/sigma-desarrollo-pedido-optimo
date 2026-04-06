@@ -1,0 +1,70 @@
+apiName: TradeActivity
+displayName: "Trade Activity (Actividad Trade)"
+pluralDisplayName: "Trade Activities"
+description: >
+  Trade and promotional activity records for store-SKU combinations. These represent active trade events
+  with suggested pricing information. Displayed in PDF alerts for informational context but do not
+  directly affect ordering logic.
+titleProperty: activityId
+primaryKey: activityId
+status: ACTIVE
+
+properties:
+  activityId:
+    type: String
+    description: "Unique identifier for this trade activity entry"
+    required: true
+    sourceMapping:
+      table: actividad_trade
+      column: synthetic key from Sap, Sku, Inicio_vigencia
+
+  sapCode:
+    type: String
+    description: "Store SAP code identifying the point of sale"
+    required: true
+    sourceMapping:
+      table: actividad_trade
+      column: Sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier"
+    required: true
+    sourceMapping:
+      table: actividad_trade
+      column: Sku
+
+  productName:
+    type: String
+    description: "Product name associated with this trade activity"
+    required: false
+    sourceMapping:
+      table: actividad_trade
+      column: Producto
+
+  suggestedPrice:
+    type: Double
+    description: "Suggested price for the trade activity, formatted in PDF output as '$X,XXX precio sugerido'"
+    required: false
+    sourceMapping:
+      table: actividad_trade
+      column: Desc_trade
+
+  startDate:
+    type: Date
+    description: "Start date of the trade activity vigency period"
+    required: false
+    sourceMapping:
+      table: actividad_trade
+      column: Inicio_vigencia
+
+  endDate:
+    type: Date
+    description: "End date of the trade activity vigency period"
+    required: false
+    sourceMapping:
+      table: actividad_trade
+      column: Fin_vigencia
+
+tags:
+  - reference

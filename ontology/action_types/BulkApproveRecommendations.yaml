@@ -1,0 +1,48 @@
+apiName: bulkApproveRecommendations
+displayName: "Bulk Approve Recommendations"
+description: >
+  Approves multiple order recommendations in a single transaction. Designed
+  for CEDI coordinators who need to approve batches (e.g., all priority-1
+  recommendations for today, or all recommendations for a specific store).
+
+  Implementation note: Palantir actions have a max object limit per transaction.
+  For very large batches, consider pipeline-driven auto-accept with configurable
+  rules (e.g., auto-approve all priority-1 recommendations where pushQuantity
+  is below a threshold). This action handles the manual bulk-approve use case.
+implementation: function-backed
+
+parameters:
+  recommendations:
+    type: Array
+    description: "The set of recommendations to approve. Filtered in the UI by store, priority, date, etc."
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  notes:
+    type: String
+    description: "Justification for the bulk approval"
+    required: false
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: functionRule
+    description: >
+      For each recommendation in the set:
+      1. Verify status is pending or reviewed
+      2. Set status = accepted
+      3. Set decidedBy = currentUser
+      4. Set decidedAt = currentTimestamp
+      5. Set decisionNotes = notes
+    modifies:
+      - objectType: OrderRecommendation
+        properties: [status, decidedBy, decidedAt, decisionNotes]
+
+sideEffects:
+  - type: notification
+    description: "Notify relevant field reps that their store recommendations were approved"
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT
+  - AI_AGENT

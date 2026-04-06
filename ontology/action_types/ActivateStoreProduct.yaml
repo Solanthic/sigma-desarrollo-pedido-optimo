@@ -1,0 +1,38 @@
+apiName: activateStoreProduct
+displayName: "Activate Store Product"
+description: >
+  Activates a store-product assignment, enabling the product to be ordered
+  and stocked at the store. Used by CEDI operations or management to restore
+  a previously deactivated SKU or enable a new assignment.
+
+parameters:
+  assignment:
+    type: ObjectType:StoreProductAssignment
+    description: "The store-product assignment to activate"
+    required: true
+    formDisplay: visible
+    defaultValue: null
+  activationReason:
+    type: String
+    description: "Optional reason for activating the store-product assignment"
+    required: false
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: StoreProductAssignment
+    target: assignment
+    propertyChanges:
+      - property: isActive
+        value: true
+      - property: operationFlag
+        value: true
+      - property: activatedBy
+        source: currentUser
+      - property: activatedAt
+        source: currentTimestamp
+
+permissions:
+  - CEDI_OPS
+  - MANAGEMENT

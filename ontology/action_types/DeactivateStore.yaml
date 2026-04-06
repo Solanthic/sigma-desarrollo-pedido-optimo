@@ -1,0 +1,48 @@
+apiName: deactivateStore
+displayName: "Deactivate Store"
+description: >
+  Deactivates an entire store, setting isActive to false on the Store object
+  and bulk-deactivating all linked StoreProductAssignments. This is a
+  function-backed action because it modifies multiple object types in one
+  transaction (Store + all its assignments).
+implementation: function-backed
+
+parameters:
+  store:
+    type: ObjectType:Store
+    description: "The store to deactivate"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  reason:
+    type: String
+    description: "Reason for deactivating the store"
+    required: true
+  preserveAssignments:
+    type: Boolean
+    description: "If true, assignments are marked inactive but retained for potential reactivation. If false, assignments are deleted."
+    required: true
+    defaultValue: true
+
+rules:
+  - type: functionRule
+    description: >
+      1. Set store.isActive = false
+      2. Query all StoreProductAssignments linked to this store
+      3. For each assignment: set isActive = false, set deactivatedBy = currentUser, set deactivatedAt = currentTimestamp
+    modifies:
+      - objectType: Store
+        properties: [isActive]
+      - objectType: StoreProductAssignment
+        properties: [isActive, deactivatedBy, deactivatedAt]
+
+submissionCriteria:
+  - condition: "store.isActive must be true"
+    failureMessage: "Store is already inactive"
+
+sideEffects:
+  - type: notification
+    description: "Notify CEDI coordinator that store has been deactivated"
+
+permissions:
+  - MANAGEMENT

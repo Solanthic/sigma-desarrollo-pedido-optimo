@@ -1,0 +1,79 @@
+apiName: SellIn
+displayName: "Sell-In (Venta a Tienda)"
+pluralDisplayName: "Sell-In Records"
+description: >
+  Records what Sigma ships/sells into a store at the SKU level. Combines
+  customer orders (what the retailer requested) and in-transit shipments
+  (what's on the way). This is the supply signal — the counterpart to SellOut.
+titleProperty: sellInId
+primaryKey: sellInId
+status: ACTIVE
+
+properties:
+  sellInId:
+    type: String
+    description: "Synthetic primary key: {sapCode}_{sku}_{date}"
+    required: true
+    sourceMapping:
+      table: null
+      notes: "Synthetic key from sapCode + sku + date. Combines order and transit data."
+
+  sapCode:
+    type: String
+    description: "SAP store identifier. Foreign key to Store."
+    required: true
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier. Foreign key to Product."
+    required: true
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: sku
+
+  date:
+    type: Date
+    description: "Date of this sell-in record."
+    required: true
+    sourceMapping:
+      table: null
+      notes: "Order date from proyeccion_detalle_pedidos or delivery date from transitos.csv"
+
+  orderedPieces:
+    type: Integer
+    description: "Pieces ordered by the retailer for this store-SKU."
+    required: false
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: Piezas_pedido
+      notes: "MySQL database (sopor152_scrum_po)"
+
+  inTransitPieces:
+    type: Integer
+    description: "Pieces currently in transit to this store for this SKU."
+    required: false
+    sourceMapping:
+      table: transitos.csv
+      column: Cantidad
+
+  deliveryDate:
+    type: Date
+    description: "Expected delivery date for in-transit shipments."
+    required: false
+    sourceMapping:
+      table: transitos.csv
+      column: Fecha_entrega
+
+  chainId:
+    type: String
+    description: "Retail chain identifier from the order source. Foreign key to RetailChain."
+    required: false
+    sourceMapping:
+      table: proyeccion_detalle_pedidos
+      column: id_cadena
+
+tags:
+  - transactional

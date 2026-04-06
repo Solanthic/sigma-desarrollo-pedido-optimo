@@ -1,0 +1,41 @@
+apiName: acknowledgeAlert
+displayName: "Acknowledge Alert"
+description: >
+  Acknowledges a generated or distributed alert, indicating that a user
+  has reviewed it. Used by field sales, CEDI operations, or the AI agent
+  to mark alerts as handled.
+
+parameters:
+  alert:
+    type: ObjectType:InventoryAlert
+    description: "The alert to acknowledge"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  notes:
+    type: String
+    description: "Optional notes about the acknowledgement"
+    required: false
+    formDisplay: visible
+    defaultValue: null
+
+rules:
+  - type: modifyObject
+    objectType: InventoryAlert
+    target: alert
+    propertyChanges:
+      - property: status
+        value: "acknowledged"
+      - property: acknowledgedBy
+        source: currentUser
+      - property: acknowledgedAt
+        source: currentTimestamp
+
+submissionCriteria:
+  - condition: "status must be generated or distributed"
+    failureMessage: "Only alerts with status 'generated' or 'distributed' can be acknowledged"
+
+permissions:
+  - FIELD_SALES
+  - CEDI_OPS
+  - AI_AGENT

@@ -1,0 +1,71 @@
+apiName: SellOut
+displayName: "Sell-Out (Venta al Consumidor)"
+pluralDisplayName: "Sell-Out Records"
+description: >
+  Daily sell-out record at the store-SKU level. Captures what the store sold
+  to consumers (POS/scanner data) and the resulting inventory position. This
+  is the demand signal that drives the entire ordering model.
+titleProperty: sellOutId
+primaryKey: sellOutId
+status: ACTIVE
+
+properties:
+  sellOutId:
+    type: String
+    description: "Synthetic primary key: {sapCode}_{sku}_{date}"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras_oh_SCAN
+      column: null
+      notes: "Synthetic key from Sap + Sku + Fecha"
+
+  sapCode:
+    type: String
+    description: "SAP store identifier. Foreign key to Store."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras_oh_SCAN
+      column: Sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier. Foreign key to Product."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras_oh_SCAN
+      column: Sku
+
+  date:
+    type: Date
+    description: "Date of this sell-out record (inventory snapshot date)."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras_oh_SCAN
+      column: Fecha
+
+  onHandKilos:
+    type: Double
+    description: "On-hand inventory in kilos at end of day."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cabeceras_oh_SCAN
+      column: OH_kilos
+
+  onHandPieces:
+    type: Integer
+    description: "On-hand inventory in pieces: OH_kilos / Product.weightKg."
+    required: false
+    sourceMapping:
+      table: pipeline_computed
+      column: OH_Piezas (OH_kilos / Peso)
+
+  weeklyAvgSalesPieces:
+    type: Double
+    description: "Average weekly scanned sales in pieces for this store-SKU. Updated periodically from POS vendor (Pavis)."
+    required: false
+    sourceMapping:
+      table: Venta_scan_semanal_prom
+      column: Scan_pizas
+
+tags:
+  - transactional

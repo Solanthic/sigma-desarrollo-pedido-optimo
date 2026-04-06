@@ -1,0 +1,40 @@
+apiName: ProductLine
+displayName: "Product Line (Linea)"
+pluralDisplayName: "Product Lines"
+description: >
+  A product line within the Sigma catalog. Product lines group SKUs by
+  category and drive business rules — most importantly, the push reduction
+  factor (e.g., Q-FRESCOS line reduces push recommendations to 33% of
+  the calculated quantity).
+titleProperty: lineName
+primaryKey: lineId
+status: ACTIVE
+
+properties:
+  lineId:
+    type: String
+    description: "Unique identifier for the product line"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Linea
+      notes: "Derived from distinct Linea values"
+
+  lineName:
+    type: String
+    description: "Display name of the product line"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_sku
+      column: Linea
+
+  pushReductionFactor:
+    type: Double
+    description: "Multiplier applied to push recommendations for products in this line. Default 1.0 (no reduction). Q-FRESCOS uses 0.33 (67% reduction)."
+    required: true
+    sourceMapping:
+      table: "(derived: hardcoded in NB01 — Q-FRESCOS=0.33, all others=1.0)"
+      column: null
+
+tags:
+  - reference

@@ -1,0 +1,36 @@
+- generic [ref=e6]:
+  - button "Skip to content" [ref=e7] [cursor=pointer]:
+    - generic [ref=e8]: Skip to content
+  - generic [ref=e10]:
+    - generic [ref=e13]:
+      - button "Open Foundry sidebar" [ref=e16] [cursor=pointer]:
+        - img [ref=e20]
+      - generic [ref=e23]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /workspace/narrative
+          - img [ref=e27]
+        - button [ref=e29]:
+          - img [ref=e32]
+        - button [ref=e35]:
+          - img [ref=e38]
+        - button "Gift Icon" [ref=e40]:
+          - img "Gift Icon" [ref=e43]
+        - button [ref=e53]:
+          - img [ref=e56]
+        - link [ref=e58] [cursor=pointer]:
+          - /url: /workspace/compass
+          - img [ref=e61]
+        - link [ref=e63] [cursor=pointer]:
+          - /url: /workspace/hubble
+          - img [ref=e66]
+        - button [ref=e68]:
+          - img [ref=e71]
+      - generic [ref=e76]:
+        - button [ref=e78]:
+          - img [ref=e81]
+        - button [ref=e84]:
+          - img [ref=e87]
+    - main "Main content" [ref=e90]:
+      - navigation "Breadcrumb" [ref=e100]:
+        - list [ref=e101]:
+          - listitem [ref=e102]

@@ -1,0 +1,3 @@
+[     263ms] [WARNING] [Blueprint] useHotkeys() was used outside of a <HotkeysProvider> context. These hotkeys will not be shown in the hotkeys help dialog. @ https://salimentos-ia.palantirfoundry.com/assets/content-addressable-storage/frontend/8c6498fe2e33d10b91bfbde02d8da1ac9c3800a673f88709eef6586db133fafc.js:1
+[     692ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://salimentos-ia.palantirfoundry.com/favicon.ico:0
+[     713ms] [WARNING] [Blueprint] useHotkeys() was used outside of a <HotkeysProvider> context. These hotkeys will not be shown in the hotkeys help dialog. @ https://salimentos-ia.palantirfoundry.com/assets/content-addressable-storage/frontend/8c6498fe2e33d10b91bfbde02d8da1ac9c3800a673f88709eef6586db133fafc.js:1

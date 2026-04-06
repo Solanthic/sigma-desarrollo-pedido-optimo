@@ -1,0 +1,39 @@
+apiName: activateStore
+displayName: "Activate Store"
+description: >
+  Reactivates a previously deactivated store. Sets isActive to true on the
+  Store object. Does NOT automatically reactivate individual StoreProductAssignments —
+  those must be reactivated individually or via a separate bulk action, since
+  the business may want to selectively re-enable only certain SKUs.
+implementation: rule-based
+
+parameters:
+  store:
+    type: ObjectType:Store
+    description: "The store to activate"
+    required: true
+    formDisplay: hidden
+    defaultValue: currentObject
+  notes:
+    type: String
+    description: "Reason for reactivation"
+    required: false
+
+rules:
+  - type: modifyObject
+    objectType: Store
+    target: store
+    propertyChanges:
+      - property: isActive
+        value: true
+
+submissionCriteria:
+  - condition: "store.isActive must be false"
+    failureMessage: "Store is already active"
+
+sideEffects:
+  - type: notification
+    description: "Notify CEDI coordinator that store has been reactivated. Assignments must be re-enabled separately."
+
+permissions:
+  - MANAGEMENT

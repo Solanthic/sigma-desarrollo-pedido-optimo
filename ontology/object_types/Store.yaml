@@ -1,0 +1,105 @@
+apiName: Store
+displayName: "Store (Tienda)"
+pluralDisplayName: "Stores"
+description: >
+  A retail store that receives product deliveries and generates sales.
+  Each store belongs to a distribution center (CEDI), a retail chain, and a geographic region/zone.
+  This is the primary dimension for filtering and routing in the Pedido Optimo pipeline.
+titleProperty: storeName
+primaryKey: sapCode
+status: ACTIVE
+
+properties:
+  sapCode:
+    type: String
+    description: "SAP code uniquely identifying the store"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Sap
+
+  storeName:
+    type: String
+    description: "Human-readable name of the store"
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Tienda
+
+  storeGroup:
+    type: String
+    description: "Store group classification (e.g. used for Wal-Mart GRANEL exclusion)"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Grupo
+
+  retailChainId:
+    type: String
+    description: "Foreign key to RetailChain. Identifies which retail chain operates this store."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cadena
+
+  distributionCenterCode:
+    type: String
+    description: "Code of the distribution center (CEDI) that serves this store. Foreign key to DistributionCenter."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Cedi
+
+  region:
+    type: String
+    description: "Geographic region of the store"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Region
+
+  zone:
+    type: String
+    description: "Geographic zone of the store"
+    required: false
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: Zona
+
+  isActive:
+    type: Boolean
+    description: "Whether this store is currently active and receiving orders. Inactive stores are excluded from the pipeline."
+    required: true
+    sourceMapping:
+      table: mermas_autos_cat_tienda
+      column: "(derived: all stores in table are assumed active; deactivation managed via ontology action)"
+
+  # ── Ordering Schedule (merged from Roles_pedido_nacional) ─
+  orderingDays:
+    type: Array
+    description: "Days of the week this store places orders. Array of strings: ['lunes', 'miercoles', 'viernes']. Pipeline uses this to filter stores into the daily processing scope."
+    required: false
+    sourceMapping:
+      table: Roles_pedido_nacional
+      column: Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo
+      notes: "Collapsed from 7 boolean columns into an array of active day names"
+
+  # ── Contact Directory (merged from directorio_whatsapp) ───
+  executivePhone:
+    type: String
+    description: "Phone number of the sales executive responsible for this store. Used for WhatsApp alert distribution. Value '0' means no contact."
+    required: false
+    sourceMapping:
+      table: directorio_whatsapp
+      column: Cel_ejecutivo
+
+  coordinatorPhone:
+    type: String
+    description: "Phone number of the coordinator responsible for this store. Used for WhatsApp alert distribution. Value '0' means no contact."
+    required: false
+    sourceMapping:
+      table: directorio_whatsapp
+      column: Cel_coordinadora
+
+tags:
+  - master-data

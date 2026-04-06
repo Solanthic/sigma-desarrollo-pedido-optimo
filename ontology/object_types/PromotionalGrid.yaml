@@ -1,0 +1,70 @@
+apiName: PromotionalGrid
+displayName: "Promotional Grid (Parrilla Promocional)"
+pluralDisplayName: "Promotional Grids"
+description: >
+  Promotional grid assignments linking a store-SKU to a named promotional campaign with vigency dates.
+  When active, the grid flags the store-SKU as participating in a promotional plan. This is informational
+  and does not directly drive push/cut logic.
+titleProperty: gridId
+primaryKey: gridId
+status: ACTIVE
+
+properties:
+  gridId:
+    type: String
+    description: "Unique identifier for this promotional grid entry"
+    required: true
+    sourceMapping:
+      table: parrrillas
+      column: synthetic key or natural key from table
+
+  sapCode:
+    type: String
+    description: "Store SAP code identifying the point of sale"
+    required: true
+    sourceMapping:
+      table: parrrillas
+      column: sap
+
+  sku:
+    type: String
+    description: "Product SKU identifier"
+    required: true
+    sourceMapping:
+      table: parrrillas
+      column: sku
+
+  gridName:
+    type: String
+    description: "Name of the promotional grid or campaign"
+    required: false
+    sourceMapping:
+      table: parrrillas
+      column: Parrilla
+
+  startDate:
+    type: Date
+    description: "Start date of the promotional grid vigency period"
+    required: false
+    sourceMapping:
+      table: parrrillas
+      column: Inicio_vigencia
+
+  endDate:
+    type: Date
+    description: "End date of the promotional grid vigency period"
+    required: false
+    sourceMapping:
+      table: parrrillas
+      column: Fin_vigencia
+
+  isActive:
+    type: Boolean
+    description: "Whether the grid is currently active, derived from whether today falls within startDate and endDate"
+    required: false
+    sourceMapping:
+      table: parrrillas
+      column: derived from Inicio_vigencia and Fin_vigencia date range check
+
+tags:
+  - reference
