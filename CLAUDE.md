@@ -45,6 +45,36 @@ Key subfolders:
 
 When working on data pipeline design, ontology decisions, or business rule implementation, **read the relevant canon files first** — they contain context that is not duplicated in this repo.
 
+## Working Style
+
+**Scope first, then plan, then build.** Never jump straight to execution. Follow this workflow for any non-trivial task:
+
+1. **Scope** — What should we create? List the candidates, evaluate tradeoffs, and propose what to tackle next. Present options to the user.
+2. **Plan** — Once the user picks a direction, design the approach. Use `/plan` for implementation tasks. Iterate on the approach with the user before writing anything.
+3. **Build** — Execute the agreed plan. Ship incrementally — small, reviewable chunks.
+4. **Verify** — Confirm the output works (query it, test it, validate schemas). Show the user the result.
+
+**Do NOT:**
+- Start creating Foundry resources (object types, datasets, transforms, syncs) without explicit user alignment on what to create and how
+- Assume the next step — always present the menu of options and let the user decide priority
+- Batch multiple creation steps silently — each significant creation should be scoped, agreed, then executed
+
+**DO:**
+- Present a clear "here's what we CAN do next" list when transitioning between tasks
+- Ask the user which item to tackle before diving in
+- Use plan mode for anything that touches Foundry resources or multi-step implementations
+- Keep the progress log updated after completing major work
+
+## AI FDE Skill
+
+Use `/ai-fde <task>` to orchestrate Palantir AI FDE via browser automation. Claude Code acts as meta-orchestrator (planning, context, decisions) while AI FDE executes inside Foundry (creating objects, writing transforms, running builds).
+
+**Key capabilities** (beyond MCP): write Python transforms, manage code repos, run builds, Pipeline Builder, OSDK React apps.
+
+**Requirements**: Chrome must be closed before starting (Playwright uses the Chrome profile for passkey auth). Foundry host: `salimentos-ia.palantirfoundry.com`.
+
+**Language rule**: All ontology display names, API names, and descriptions must be in Spanish. API names use Spanish camelCase (codigoSap, nombreTienda). See `.claude/skills/ai-fde/skill.md` for the full protocol.
+
 ## Ontology
 
 The `ontology/` folder contains Palantir Foundry ontology definitions (YAML) for the Pedido Optimo domain:
