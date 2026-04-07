@@ -10,15 +10,18 @@
 We analyzed 44 static data exports, 39 Snowflake tables, 10 SQL queries, and 5 Python notebooks. The Pedido Optimo pipeline requires 19 source tables. Here is where we stand:
 
 
-| Category                                                               | Count | Status                                            |
-| ---------------------------------------------------------------------- | ----- | ------------------------------------------------- |
-| Raw tables available in Snowflake                                      | 5     | Ready to use                                      |
-| Raw tables MISSING from Snowflake                                      | 5     | **Need migration**                                |
-| Derived tables where we HAVE the generation code                       | 6     | Can rebuild in Foundry                            |
-| Derived tables where we're MISSING the generation code                 | 5     | **Need documentation from Enrique**               |
-| Pre-computed shortcut tables in Snowflake (derived output, not source) | 3     | Use as validation, not as source                  |
-| Sell-in data (TBL_RM_CTX / SHARING_SELLIN)                             | 2     | Incremental sync in progress                      |
-| Sell-out daily data (OH + scans)                                       | 1     | Static export only — **Snowflake source unknown** |
+| Category                                                               | Count | Status                                                     |
+| ---------------------------------------------------------------------- | ----- | ---------------------------------------------------------- |
+| Raw tables available in Snowflake                                      | 5     | Ready to use (T02, T04, T13, T14, T18)                     |
+| Raw tables MISSING from Snowflake                                      | 3     | **Need migration** (T01, T10, T19)                         |
+| Raw tables PARTIAL in Snowflake (embedded / single-store only)         | 1     | **Need standalone table** (T03 in SOP_PAC_PEDIDO_BASE)     |
+| Raw tables with UNCERTAIN Snowflake match                              | 1     | **Need verification** (T12 → SOP_PAC_EMPLOYEES_COMERCIAL?) |
+| Derived tables where we HAVE the generation code                       | 6     | Can rebuild in Foundry                                     |
+| Derived tables where code is PARTIALLY known                           | 1     | Formula known, aggregation window unknown (T07)            |
+| Derived tables where we're MISSING the generation code                 | 4     | **Need documentation from Enrique** (T05, T08, T11, T16)  |
+| Pre-computed shortcut tables in Snowflake (derived output, not source) | 3     | Use as validation, not as source                           |
+| Sell-in data (TBL_RM_CTX / SHARING_SELLIN)                             | 2     | Incremental sync in progress                               |
+| Sell-out daily data (OH + scans)                                       | 1     | Static export only — **Snowflake source unknown**          |
 
 
 ---
@@ -40,13 +43,27 @@ We analyzed 44 static data exports, 39 Snowflake tables, 10 SQL queries, and 5 P
 ### MISSING from Snowflake — Need Migration
 
 
-| Table                          | Pipeline ID | Criticality  | What's Needed                                                                       | Static Export Available?                                                                   |
-| ------------------------------ | ----------- | ------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **Daily sell-out + inventory** | T01         | **CRITICAL** | Daily OH_kilos + Scan_kilos at store-SKU-day grain. Source = Pavis scanner feed.    | Yes: `sell_out_oh_diarios_28` (Fecha, sap, Sku, OH_kilos, Scan_kilos) — 28-day window only |
-| **SKU master catalog**         | T03         | **CRITICAL** | Standalone SKU dimension (Sku, Producto, Peso, Familia, Linea, Presentacion, Marca) | Yes: `mermas_autos_cat_sku.csv`                                                            |
-| **Ordering schedule**          | T10         | **HIGH**     | Day-of-week binary flags per store (Lunes-Domingo)                                  | Yes: `Roles_pedido_nacional.csv`                                                           |
-| **WhatsApp directory**         | T12         | **HIGH**     | Phone numbers (Cel_ejecutivo, Cel_coordinadora) per store                           | Yes: `directorio_whatsapp.csv`                                                             |
-| **In-transit shipments**       | T19         | **HIGH**     | Shipment quantities by store-SKU with delivery dates. Source = SAP.                 | Not in Foundry                                                                             |
+| Table                          | Pipeline ID | Criticality  | What's Needed                                                                    | Static Export Available?                                                                   |
+| ------------------------------ | ----------- | ------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Daily sell-out + inventory** | T01         | **CRITICAL** | Daily OH_kilos + Scan_kilos at store-SKU-day grain. Source = Pavis scanner feed. | Yes: `sell_out_oh_diarios_28` (Fecha, sap, Sku, OH_kilos, Scan_kilos) — 28-day window only |
+| **Ordering schedule**          | T10         | **HIGH**     | Day-of-week binary flags per store (Lunes-Domingo)                               | Yes: `Roles_pedido_nacional.csv`                                                           |
+| **In-transit shipments**       | T19         | **HIGH**     | Shipment quantities by store-SKU with delivery dates. Source = SAP.              | Not in Foundry                                                                             |
+
+
+### PARTIAL in Snowflake — Need Standalone Table
+
+
+| Table                  | Pipeline ID | Criticality  | What's Available                                                                                                                                     | What's Needed                                                                       |
+| ---------------------- | ----------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **SKU master catalog** | T03         | **CRITICAL** | Embedded in `SOP_PAC_PEDIDO_BASE` (185 rows, 1 store only). Columns: Sku, Producto, Peso, Familia, Linea, Presentacion, Marca visible in that table | Standalone table at national scale. Static export exists: `mermas_autos_cat_sku.csv` |
+
+
+### UNCERTAIN Snowflake Match — Need Verification
+
+
+| Table                    | Pipeline ID | Criticality | Possible Snowflake Table            | What's Needed                                                                                                            |
+| ------------------------ | ----------- | ----------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **WhatsApp directory**   | T12         | **HIGH**    | `SOP_PAC_EMPLOYEES_COMERCIAL` (17,517 rows) | Verify this table contains Cel_ejecutivo + Cel_coordinadora columns matching `directorio_whatsapp.csv` schema. If yes, no migration needed |
 
 
 ---
@@ -65,29 +82,37 @@ These tables are computed by our SQL queries and Python notebooks. We have the *
 | **No_cargar_pedido** (cut flag)               | NB01 Python                    | Tipo_merma + OH_proyectado + Inventario_sugerido | Flag=1 when high-shrinkage AND projected > target                                              |
 | **Prioridad** (priority score)                | NB01 Python                    | Piezas_empuje + T08 (Top_venta)                  | 1=push+top seller, 2=push+non-top, 0=no push                                                   |
 | **Empuje_cabecera** (promo push)              | NB01 Python                    | T06 (Objetivo_cabecera) + OH_proyectado          | `Objetivo_cabecera - OH_proyectado` if active promotion                                        |
-| **Reactivation flags**                        | `my_query1.sql`                | T05 (Tipo_merma) + T04 (operacion)               | Flag if Tipo_merma IS NULL and SKU is active                                                   |
+| **Reactivation flags (two flags)**            | `my_query1.sql`                | T05 (Tipo_merma) + T04 (operacion)               | `Reactivar_con_pedido_operacion` if operacion=1; `Reactivar_con_pedido_central` if operacion=0. Triggered when Tipo_merma IS NULL and SKU is active |
 | **Con_cabecera_activa / Con_parrilla_activa** | `my_query1.sql`                | T06/T09 vigency dates                            | 1 if today between Inicio_vigencia and Fin_vigencia                                            |
+| **Activa_cliente flag**                       | `my_query1.sql`                | T04 (activo_tienda)                              | Flag indicating store-SKU combo is active for the client                                       |
+| **Puede_pedir_op flag**                       | `my_query1.sql`                | T04 (activo_tienda) + T10 (roles)                | Flag indicating store-SKU can be ordered operationally                                         |
 | **Day-of-week store filtering**               | NB02 Python                    | T10 (roles)                                      | Map weekday → Spanish, filter stores where day=1                                               |
 | **Order comparison** (Piezas adicionales)     | NB02 Python                    | Pipeline output + T18 (customer orders)          | `Piezas_a_cargar - Pedido_original_cadena`                                                     |
 | **Wal-Mart GRANEL exclusion**                 | NB04 Python                    | T02 (Grupo) + T03 (Presentacion)                 | Exclude where Grupo='Wal-Mart' AND Presentacion='GRANEL'                                       |
+| **Alerting flags (impulse/cut)**              | NB03-05 Python                 | Piezas_empuje + No_cargar_pedido                 | `Con_algun_empuje` / `Con_algun_recorte` — triggers alert generation per store                 |
+| **Merma ratio (%)**                           | NB03-05 Python                 | T05 (Merma_promedio, Vol_promedio)                | `(-Merma_promedio / Vol_promedio) × 100` — displayed in alert PDFs                             |
+| **Soriana routing**                           | NB03-05 Python                 | T02 (Grupo/Cadena)                               | Soriana stores routed to separate alert flow with chain-specific formatting                    |
+| **Alert PDF generation (multi-section)**      | NB03-05 Python                 | All derived outputs above                        | Color-coded PDF sections: blue (impulse), red (high-merma), green (promos), coffee (notes)     |
+| **Concentrado accumulation (impulse/cut)**    | NB03 Python                    | Alert outputs                                    | `Concentrado_impulso.csv` / `Concentrado_recorte.csv` — historical log with deduplication      |
 
+> **Note on Tipo_merma values**: The source SQL (`my_query1.sql`) contains both `'Scritica'` and `'Critica'` as separate CASE branches with different day multipliers (8 vs 7). Confirm with Enrique whether both are intentional data classifications or if `'Scritica'` is a legacy spelling.
 
 **All formulas documented in**: `context/COMPUTATION_GRAPH.md` Section 2
 
 ---
 
-## Part 3: Derived Tables — Code MISSING (Blindspots)
+## Part 3: Derived Tables — Code MISSING or PARTIALLY Known (Blindspots)
 
-These tables contain computed results but we do NOT have the code/logic that generates them. They are produced by upstream processes outside our codebase.
+These tables contain computed results but we do NOT have the complete code/logic that generates them. They are produced by upstream processes outside our codebase.
 
 ### CRITICAL — Must document before Enrique's transition (2026-05-04)
 
 
-| Table                                   | Pipeline ID | What's Computed                                                                                                 | What We Know                                                                                                                                                                        | What We Need                                                                                                                                               |
-| --------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `**mermas_autos_test_pedido_sugerido`** | T05         | `Tipo_merma` classification (Ok/Alta/Muy Alta/Scritica/Critica/Inconsistente), `Vol_neto`, `DME`, `Pedido_prom` | Two granularities exist: annual + quarterly (from `mermas_autos_Tipo_merma_anual` schema: Tipo_merma_anual, Tipo_merma_trimestral, last_merma_per). Pipeline likely uses quarterly. | **The exact thresholds/model that maps shrinkage ratios → category labels. Is it rule-based (e.g., merma% < 5% = Ok, 5-10% = Alta)? Statistical? Manual?** |
-| `**Venta_scan_semanal_prom`**           | T07         | `Scan_pizas` — weekly average scanned sales in pieces                                                           | Raw daily data exists in `sell_out_oh_diarios_28` (Fecha, sap, Sku, Scan_kilos). "28" suggests 28-day window.                                                                       | **Exact aggregation: is it rolling 28 days? Calendar weeks? How is Scan_kilos converted to Scan_pizas (÷ Peso)? Are outliers excluded?**                   |
-| `**mermas_autos_TC_Inventario_optimo`** | T16         | `Inventario_optimo`, `DOH_Actuales`, `Pedido_minimo_sugerido` — a different optimal inventory model             | In Snowflake as `SOP_PAC_TC_RL` (95 rows, Pachuca + RL class only). Schema: INV_TEORICO, DOH_ACTUALES, INVENTARIO_OPTIMO, PIEZAS_TRANSITO.                                          | **How is Inventario_optimo calculated? Different from NB01's Inventario_sugerido. Which model is "correct" for the Foundry rebuild?**                      |
+| Table                                   | Pipeline ID | Code Status          | What's Computed                                                                                                 | What We Know                                                                                                                                                                        | What We Need                                                                                                                                               |
+| --------------------------------------- | ----------- | -------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `**mermas_autos_test_pedido_sugerido`** | T05         | **MISSING**          | `Tipo_merma` classification (Ok/Alta/Muy Alta/Scritica/Critica/Inconsistente), `Vol_neto`, `DME`, `Pedido_prom` | Two granularities exist: annual + quarterly (from `mermas_autos_Tipo_merma_anual` schema: Tipo_merma_anual, Tipo_merma_trimestral, last_merma_per). Pipeline likely uses quarterly. | **The exact thresholds/model that maps shrinkage ratios → category labels. Is it rule-based (e.g., merma% < 5% = Ok, 5-10% = Alta)? Statistical? Manual?** |
+| `**Venta_scan_semanal_prom`**           | T07         | **PARTIALLY known**  | `Scan_pizas` — weekly average scanned sales in pieces                                                           | Raw daily data exists in `sell_out_oh_diarios_28` (Fecha, sap, Sku, Scan_kilos). "28" suggests 28-day window. Downstream formula `(Scan_pizas/7)*days` is fully documented in `my_query1.sql`. | **Aggregation method unknown: rolling 28 days? Calendar weeks? How is Scan_kilos converted to Scan_pizas (÷ Peso)? Are outliers/promotions excluded?**     |
+| `**mermas_autos_TC_Inventario_optimo`** | T16         | **MISSING**          | `Inventario_optimo`, `DOH_Actuales`, `Pedido_minimo_sugerido` — a different optimal inventory model             | In Snowflake as `SOP_PAC_TC_RL` (95 rows, Pachuca + RL class only). Schema: INV_TEORICO, DOH_ACTUALES, INVENTARIO_OPTIMO, PIEZAS_TRANSITO.                                          | **How is Inventario_optimo calculated? Different from NB01's Inventario_sugerido. Which model is "correct" for the Foundry rebuild?**                      |
 
 
 ### HIGH — Should document
@@ -155,7 +180,7 @@ These tables contain computed results but we do NOT have the code/logic that gen
 
 ## Part 5: Additional Datasets Identified in Static Exports
 
-These 25 files in `Sqls_muestras` are NOT in the original pipeline documentation but contain potentially valuable data:
+These 26 files in `Sqls_muestras` are NOT in the original pipeline documentation but contain potentially valuable data:
 
 ### Confirmed Schema (datasets parsed in Foundry)
 
