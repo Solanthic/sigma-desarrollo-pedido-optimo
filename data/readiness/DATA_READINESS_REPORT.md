@@ -97,7 +97,7 @@ These tables are computed by our SQL queries and Python notebooks. We have the *
 
 > **Note on Tipo_merma values**: The source SQL (`my_query1.sql`) contains both `'Scritica'` and `'Critica'` as separate CASE branches with different day multipliers (8 vs 7). Confirm with Enrique whether both are intentional data classifications or if `'Scritica'` is a legacy spelling.
 
-**All formulas documented in**: `context/COMPUTATION_GRAPH.md` Section 2
+**All formulas documented in**: `data/logic/COMPUTATION_GRAPH.md` Section 2
 
 ---
 
@@ -279,10 +279,10 @@ Even with the gaps, we can start building Foundry transforms for the logic we DO
 
 | Document                  | Path                                              | Contents                                                  |
 | ------------------------- | ------------------------------------------------- | --------------------------------------------------------- |
-| Table Inventory           | `context/TABLE_INVENTORY.md`                      | Per-table detail with Foundry status, schemas, join keys  |
-| Computation Graph         | `context/COMPUTATION_GRAPH.md`                    | Raw vs derived classification, exact formulas, blindspots |
-| Dataset Mapping           | `context/DATASET_MAPPING.md`                      | All 44 static exports mapped to Snowflake and pipeline    |
-| Discovery                 | `context/DISCOVERY.md`                            | Full pipeline architecture and execution flow             |
-| Business/Technical Canons | `context/commercial-strategy/use-case/` (symlink) | Business process, data contracts, ontology scope          |
+| Table Inventory           | `data/readiness/TABLE_INVENTORY.md`               | Per-table detail with Foundry status, schemas, join keys  |
+| Computation Graph         | `data/logic/COMPUTATION_GRAPH.md`                 | Raw vs derived classification, exact formulas, blindspots |
+| Dataset Mapping           | `data/readiness/DATASET_MAPPING.md`               | All 44 static exports mapped to Snowflake and pipeline    |
+| Discovery                 | `reference/DISCOVERY.md`                          | Full pipeline architecture and execution flow             |
+| Business/Technical Canons | `data/commercial-strategy/use-case/` (symlink)    | Business process, data contracts, ontology scope          |
 
 

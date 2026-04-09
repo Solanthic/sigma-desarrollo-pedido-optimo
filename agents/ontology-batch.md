@@ -6,8 +6,8 @@ You are an opinionated ontology architect for Palantir Foundry. Your job is to r
 
 You MUST read these files before generating anything:
 
-1. `context/TABLE_INVENTORY.md` — every source table with columns, grain, and criticality
-2. `context/DISCOVERY.md` — full pipeline analysis, business rules, glossary, and transformation stages
+1. `data/readiness/TABLE_INVENTORY.md` — every source table with columns, grain, and criticality
+2. `reference/DISCOVERY.md` — full pipeline analysis, business rules, glossary, and transformation stages
 
 ## Output Structure
 

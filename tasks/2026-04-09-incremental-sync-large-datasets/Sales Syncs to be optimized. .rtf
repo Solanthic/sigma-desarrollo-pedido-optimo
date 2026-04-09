@@ -1,0 +1,592 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 CourierNewPSMT;\f4\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red26\green71\blue160;\red255\green255\blue255;\red22\green25\blue29;
+\red244\green245\blue247;\red77\green87\blue105;\red245\green246\blue246;\red0\green0\blue0;\red120\green171\blue255;
+\red69\green69\blue69;\red155\green163\blue177;\red255\green255\blue255;\red138\green39\blue139;\red178\green15\blue79;
+\red35\green39\blue46;\red52\green64\blue21;\red154\green29\blue39;\red125\green135\blue151;\red12\green94\blue84;
+\red25\green93\blue51;\red31\green116\blue64;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c36471\c69020;\cssrgb\c100000\c100000\c100000;\cssrgb\c10980\c12941\c15294;
+\cssrgb\c96471\c96863\c97647;\cssrgb\c37255\c41961\c48627;\cssrgb\c96863\c97255\c97255;\cssrgb\c0\c0\c0;\cssrgb\c54118\c73333\c100000\c14902;
+\cssrgb\c34118\c34118\c34118;\cssrgb\c67059\c70196\c74902;\cssrgb\c100000\c100000\c100000\c70196;\cssrgb\c61569\c24706\c61569;\cssrgb\c76078\c15294\c38431;
+\cssrgb\c18431\c20392\c23529;\cssrgb\c26275\c31373\c10588;\cssrgb\c67451\c18431\c20000;\cssrgb\c56078\c60000\c65882\c14902;\cssrgb\c0\c43922\c40392;
+\cssrgb\c10980\c43137\c25882;\cssrgb\c13725\c52157\c31765\c10196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 "DB_GOLD"."SC_MX_SD"."SHARING_SELLIN"
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+T.StructType([\
+    T.StructField('BILL_NUM', T.StringType(), False),\
+    T.StructField('BILL_ITEM', T.StringType(), False),\
+    T.StructField('YEAR_MONTH', T.LongType(), False),\
+    T.StructField('MONTH', T.StringType(), False),\
+    T.StructField('QUARTER', T.StringType(), False),\
+    T.StructField('YEAR_WEEK', T.LongType(), False),\
+    T.StructField('YEAR', T.LongType(), False),\
+    T.StructField('CUSTOMER_ID', T.StringType(), False),\
+    T.StructField('SALES_DISTRICT', T.StringType(), False),\
+    T.StructField('CUSTOMER_GROUP', T.StringType(), False),\
+    T.StructField('SALES_ORGANIZATION', T.StringType(), False),\
+    T.StructField('DISTRIBUTION_CHANNEL', T.StringType(), False),\
+    T.StructField('BILL_QTY', T.DoubleType(), False),\
+    T.StructField('SALES_UNIT', T.StringType(), False),\
+    T.StructField('MATERIAL_ID', T.StringType(), False),\
+    T.StructField('DIVISION', T.StringType(), False),\
+    T.StructField('FAMILY', T.StringType(), False),\
+    T.StructField('SEGMENT', T.StringType(), False),\
+    T.StructField('LINE_DESC', T.StringType(), False),\
+    T.StructField('SALES_OFFICE_ID', T.StringType(), False),\
+    T.StructField('VOLUME_DELIVERED', T.DoubleType(), False),\
+    T.StructField('WEIGHT_UNIT', T.StringType(), False),\
+    T.StructField('TOTAL_COST', T.DoubleType(), False),\
+    T.StructField('GROSS_PROFIT', T.StringType(), False),\
+    T.StructField('MARGINAL_CONTRIBUTION', T.StringType(), False),\
+    T.StructField('VARIABLE_COST', T.StringType(), False),\
+    T.StructField('FIXED_COST', T.StringType(), False),\
+    T.StructField('OTHER_COST', T.DoubleType(), False),\
+    T.StructField('DISCOUNT_AMOUNT', T.StringType(), False),\
+    T.StructField('DISCOUNT_VOLUME', T.StringType(), False),\
+    T.StructField('GOOD_RETURNS_AMOUNT', T.StringType(), False),\
+    T.StructField('GOOD_RETURNS_VOLUME', T.StringType(), False),\
+    T.StructField('BAD_RETURNS_AMOUNT', T.StringType(), False),\
+    T.StructField('BAD_RETURNS_VOLUME', T.StringType(), False),\
+    T.StructField('GROSS_SALES', T.DoubleType(), False),\
+    T.StructField('NET_SALES', T.DoubleType(), False),\
+    T.StructField('GROSS_VOLUME', T.DoubleType(), False),\
+    T.StructField('NET_VOLUME', T.DoubleType(), False)\
+])\
+\
+\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/workspace/dataset/preview/ri.foundry.main.dataset.58f47edb-3d3d-4125-b000-ea5a82f627c8/master"}}{\fldrslt 
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 "DB_GOLD"."SC_MX_SD"."TBL_RM_CTX"}}
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\
+T.StructType([\
+    T.StructField('BILL_NUM', T.StringType(), False),\
+    T.StructField('BILL_ITEM', T.StringType(), False),\
+    T.StructField('YEAR_MONTH', T.LongType(), False),\
+    T.StructField('MONTH', T.StringType(), False),\
+    T.StructField('MONTH_NAME', T.StringType(), False),\
+    T.StructField('QUARTER', T.StringType(), False),\
+    T.StructField('YEAR_WEEK', T.LongType(), False),\
+    T.StructField('WEEK', T.StringType(), False),\
+    T.StructField('YEAR', T.LongType(), False),\
+    T.StructField('CUSTOMER_ID', T.StringType(), False),\
+    T.StructField('SALES_DISTRICT', T.StringType(), False),\
+    T.StructField('CUSTOMER_GROUP', T.StringType(), False),\
+    T.StructField('REGION', T.StringType(), False),\
+    T.StructField('SALES_ORGANIZATION', T.StringType(), False),\
+    T.StructField('DISTRIBUTION_CHANNEL', T.StringType(), False),\
+    T.StructField('BILL_QTY', T.DoubleType(), False),\
+    T.StructField('SALES_UNIT', T.StringType(), False),\
+    T.StructField('MATERIAL_ID', T.StringType(), False),\
+    T.StructField('PRODUCT_DESC', T.StringType(), False),\
+    T.StructField('DIVISION', T.StringType(), False),\
+    T.StructField('FAMILY', T.StringType(), False),\
+    T.StructField('BRAND', T.StringType(), False),\
+    T.StructField('PRESENTATION', T.StringType(), False),\
+    T.StructField('SEGMENT', T.StringType(), False),\
+    T.StructField('LINE_DESC', T.StringType(), False),\
+    T.StructField('SALES_OFFICE_ID', T.StringType(), False),\
+    T.StructField('VOLUME_DELIVERED', T.DoubleType(), False),\
+    T.StructField('WEIGHT_UNIT', T.StringType(), False),\
+    T.StructField('TOTAL_COST', T.DoubleType(), False),\
+    T.StructField('GROSS_PROFIT', T.StringType(), False),\
+    T.StructField('MARGINAL_CONTRIBUTION', T.StringType(), False),\
+    T.StructField('VARIABLE_COST', T.StringType(), False),\
+    T.StructField('FIXED_COST', T.StringType(), False),\
+    T.StructField('OTHER_COST', T.DoubleType(), False),\
+    T.StructField('DISCOUNT_AMOUNT', T.StringType(), False),\
+    T.StructField('DISCOUNT_VOLUME', T.StringType(), False),\
+    T.StructField('GOOD_RETURNS_AMOUNT', T.StringType(), False),\
+    T.StructField('GOOD_RETURNS_VOLUME', T.StringType(), False),\
+    T.StructField('BAD_RETURNS_AMOUNT', T.StringType(), False),\
+    T.StructField('BAD_RETURNS_VOLUME', T.StringType(), False),\
+    T.StructField('GROSS_SALES', T.DoubleType(), False),\
+    T.StructField('NET_SALES', T.DoubleType(), False),\
+    T.StructField('GROSS_VOLUME', T.DoubleType(), False),\
+    T.StructField('NET_VOLUME', T.DoubleType(), False),\
+    T.StructField('CTOVAR_VOL_SOC', T.DoubleType(), False),\
+    T.StructField('SYNC_TIMESTAMP', T.TimestampType(), False)\
+])\
+\
+\
+How Syncs are configured\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\b\fs32 \cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\ls1\ilvl0\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 {\listtext		}Sync for "DB_GOLD"."SC_MX_SD"."TBL_RM_CTX"
+\f0\b0\fs28 \cf2 \cb3 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\li840\fi-840\ri840\sa400\partightenfactor0
+
+\f1\b\fs36 \cf4 \cb5 \strokec4 Editing sync\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb3 Dataset\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf4 \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/workspace/dataset/preview/ri.foundry.main.dataset.58f47edb-3d3d-4125-b000-ea5a82f627c8/master"}}{\fldrslt \cf2 \cb3 \strokec2 "DB_GOLD"."SC_MX_SD"."TBL_RM_CTX"}}\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/workspace/dataset/preview/ri.foundry.main.dataset.58f47edb-3d3d-4125-b000-ea5a82f627c8/master"}}{\fldrslt 
+\fs24 \cf6 \cb3 \strokec6 /Sigma Alimentos-45c2b9/Fuente de Datos - Snowflake /raw}}
+\fs24 \cf6 \strokec6 \
+
+\fs28 \cf4 \cb3 \strokec4 master\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Schedule\cb1 \
+\pard\pardeftab720\ri160\sa160\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Run this import\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb7 \strokec4 On a schedule\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f1\b \cf4 \cb3 Schedule Details\cb1 \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb200 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil \tapadb200 
+\clvertalc \clshdrawnil \clwWidth2000\clftsWidth3 \clminw2000 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth11000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri200\partightenfactor0
+
+\f0\b0\fs24 \cf6 \cb3 \strokec6 Run every\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb3 \strokec4 1
+\fs24 \cf0 \cb1 \strokec8 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb7 \strokec4 Day\cb1 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf6 \strokec6 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb200 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil \tapadb200 
+\clvertalc \clshdrawnil \clwWidth2000\clftsWidth3 \clminw2000 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt200 \clpadl20 \clpadb800 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth11000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt200 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri200\partightenfactor0
+
+\fs24 \cf6 \cb3 At\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \strokec8 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs32 \cf6 \cb3 \strokec6 :
+\f2\fs28 \cf4 \cb1 \strokec4 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf4 \cb7 AM\cb1 \
+\cb7 PM\cb1 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf6 \strokec6 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \strokec8 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb7 \strokec4 Mexico City (CST) -06:00\cb1 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf6 \strokec6 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Select transaction type\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf0 \strokec8 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Snapshot\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Defines a new dataset state consisting only of files from this transaction.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \strokec8 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb9 \strokec4 Append\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb9 \strokec6 Purely additive, yields data from previous transactions plus newly added files.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \strokec10 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Update\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Replaces existing files from previous transactions based on file name.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 SQL Query\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs23\fsmilli11667 \cf4 \strokec4 \
+\
+\
+\
+\
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 1\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 SELECT\cf4 \strokec4  *, \cf13 \strokec13 CURRENT_TIMESTAMP\cf4 \strokec4  \cf13 \strokec13 AS\cf4 \strokec4  sync_timestamp\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 2\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 FROM\cf4 \strokec4  "DB_GOLD"."SC_MX_SD"."TBL_RM_CTX"\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 3\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 WHERE\cf4 \strokec4  YEAR_MONTH > \cf14 \strokec14 ?\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 4\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0\cf13 \strokec13 AND\cf4 \strokec4  YEAR_MONTH <= \cf13 \strokec13 CAST\cf15 \strokec15 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0  TO_CHAR\cf15 \strokec15 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 6\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0  DATEADD\cf15 \strokec15 (\cf16 \strokec16 'MONTH'\cf4 \strokec4 , \cf14 \strokec14 1\cf4 \strokec4 , TO_DATE\cf15 \strokec15 (\cf13 \strokec13 CAST\cf15 \strokec15 (\cf14 \strokec14 ? \cf13 \strokec13 AS\cf4 \strokec4  STRING\cf15 \strokec15 )\cf4 \strokec4 , \cf16 \strokec16 'YYYYMM'\cf15 \strokec15 ))\cf4 \strokec4 ,\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 7\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0\cf16 \strokec16 'YYYYMM'\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 8\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0\cf15 \strokec15 )\cf4 \strokec4  \cf13 \strokec13 AS\cf4 \strokec4  INTEGER\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 9\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0\cf15 \strokec15 )\cf4 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 \
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/docs/foundry/data-connection/optimize-jdbc-syncs"}}{\fldrslt 
+\f0\fs28 \cf2 \cb3 \strokec2 Learn how to optimize this sync}}
+\f0\fs28 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Incremental\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf17 \cb3 \strokec17 Disable\cb1 \
+\pard\pardeftab720\sa160\partightenfactor0
+\cf6 \cb3 \strokec6 Incremental syncs are stateful syncs enabling append-style transactions from the same table, minimizing or eliminating duplication of data. You must provide a monotonically increasing column such as a timestamp or id and an initial value for this column. An incremental sync will import rows where the value is greater than or equal to the largest already imported.\cb1 \
+\cb3 When incremental is enabled, you can use the\'a0
+\f4\fs23\fsmilli11667 \cb12 ?
+\f0\fs28 \cb3 \'a0character to reference the incremental state value when constructing your query. Normally this would be used in a WHERE clause or similar filter applied in order to only sync data with an incremental column value larger than the previously observed maximum value stored in the incremental state.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb18 \strokec4 Preview is still loading. The incremental column can be set manually. Carefully pick the column type and name as incorrect values will cause the sync to fail.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf17 \strokec17 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 YEAR_MONTH\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 LONG\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 202312\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 \
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Compute profile settings\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb7 \strokec4 Medium\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb7 \strokec6 6 GB of memory\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf6 \cb3 Customize the compute profile used for this batch sync when the job is run in Foundry.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 \cb3 \strokec2 \
+\
+Another\
+
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+Sync for "DB_GOLD"."SC_MX_SD"."SHARING_SELLIN"\
+\
+\
+\pard\pardeftab720\li840\fi-840\ri840\sa400\partightenfactor0
+
+\f1\b\fs36 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Editing sync\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb3 Dataset\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf4 \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/workspace/dataset/preview/ri.foundry.main.dataset.c5acf4a4-6f8f-4465-a3e3-086ee400c168/master"}}{\fldrslt \cf2 \cb3 \strokec2 "DB_GOLD"."SC_MX_SD"."SHARING_SELLIN"}}\
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/workspace/dataset/preview/ri.foundry.main.dataset.c5acf4a4-6f8f-4465-a3e3-086ee400c168/master"}}{\fldrslt 
+\fs24 \cf6 \cb3 \strokec6 /Sigma Alimentos-45c2b9/Fuente de Datos - Snowflake /raw}}
+\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb3 \strokec4 master\cf6 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Schedule\cb1 \
+\pard\pardeftab720\ri160\sa160\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Run this import\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb7 \strokec4 On a schedule\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f1\b \cf4 \cb3 Schedule Details\cb1 \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb200 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil \tapadb200 
+\clvertalc \clshdrawnil \clwWidth2000\clftsWidth3 \clminw2000 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth11000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri200\partightenfactor0
+
+\f0\b0\fs24 \cf6 \cb3 \strokec6 Run every\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb7 \strokec4 30\cb1 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf4 \cb7 \strokec4 Minutes\cb1 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf6 \strokec6 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb200 \trbrdrl\brdrnil \trbrdrr\brdrnil \tapadb200 
+\clvertalc \clshdrawnil \clwWidth2000\clftsWidth3 \clminw2000 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt200 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth11000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt200 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri200\partightenfactor0
+
+\fs24 \cf6 \cb3 Starting at\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf4 \cb3 \strokec4 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs24 \cf4 \strokec8 minutes past the hour\cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb200 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil \tapadb200 
+\clvertalt\clvertalbase \clshdrawnil \clwWidth2000\clftsWidth3 \clminw2000 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt300 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth11000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt300 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri200\partightenfactor0
+\cf6 \cb3 \strokec6 Snooze\cb1 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs28 \cf0 \strokec8 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\fs24 \cf4 \cb3 On weekends\cf0 \cb1 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Select transaction type\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf0 \strokec8 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Snapshot\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Defines a new dataset state consisting only of files from this transaction.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \strokec8 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb9 \strokec4 Append\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb9 \strokec6 Purely additive, yields data from previous transactions plus newly added files.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \strokec10 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Update\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \cb3 \strokec6 Replaces existing files from previous transactions based on file name.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 SQL Query\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs23\fsmilli11667 \cf4 \strokec4 \
+\
+\
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \strokec11 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 \
+\
+\
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 1\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4 WITH params \cf13 \strokec13 AS\cf4 \strokec4  \cf15 \strokec15 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 2\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0\cf13 \strokec13 SELECT\cf4 \strokec4  \cf13 \strokec13 CAST\cf15 \strokec15 (\cf14 \strokec14 ? \cf13 \strokec13 AS\cf4 \strokec4  INT\cf15 \strokec15 )\cf4 \strokec4  \cf13 \strokec13 AS\cf4 \strokec4  cursor_val\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 3\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf15 \cb12 \strokec15 )\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 4\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 SELECT\cf4 \strokec4  s.* \cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 FROM\cf4 \strokec4  "DB_GOLD"."SC_MX_SD"."SHARING_SELLIN" s\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 6\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 CROSS\cf4 \strokec4  \cf13 \strokec13 JOIN\cf4 \strokec4  params \cf13 \strokec13 p\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 7\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb12 \strokec13 WHERE\cf4 \strokec4  s\cf19 \cb12 \strokec19 .YEAR_MONTH\cf4 \cb12 \strokec4  >= \cf13 \strokec13 p\cf19 \cb12 \strokec19 .cursor_val\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 8\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0\cf13 \strokec13 AND\cf4 \strokec4  s\cf19 \cb12 \strokec19 .YEAR_MONTH\cf4 \cb12 \strokec4  < TO_NUMBER\cf15 \strokec15 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 9\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0  TO_CHAR\cf15 \strokec15 (\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 10\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0 \'a0 \'a0  DATEADD\cf15 \strokec15 (\cf13 \strokec13 MONTH\cf4 \strokec4 , \cf14 \strokec14 2\cf4 \strokec4 , TO_DATE\cf15 \strokec15 (\cf4 \strokec4 TO_CHAR\cf15 \strokec15 (\cf13 \strokec13 p\cf19 \cb12 \strokec19 .cursor_val\cf15 \cb12 \strokec15 )\cf4 \strokec4 , \cf16 \strokec16 'YYYYMM'\cf15 \strokec15 ))\cf4 \strokec4 ,\cb1 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\cf16 \strokec16 'YYYYMM'\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0 \'a0\cf15 \strokec15 )\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 13\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4  \'a0 \'a0 \'a0\cf15 \strokec15 )\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\qr\partightenfactor0
+\cf11 \cb12 \strokec11 14\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb12 \strokec4 \uc0\u8203 \cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 \
+{\field{\*\fldinst{HYPERLINK "https://salimentos-ia.palantirfoundry.com/docs/foundry/data-connection/optimize-jdbc-syncs"}}{\fldrslt 
+\f0\fs28 \cf2 \cb3 \strokec2 Learn how to optimize this sync}}
+\f0\fs28 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Incremental\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf17 \cb3 \strokec17 Disable\cb1 \
+\pard\pardeftab720\sa160\partightenfactor0
+\cf6 \cb3 \strokec6 Incremental syncs are stateful syncs enabling append-style transactions from the same table, minimizing or eliminating duplication of data. You must provide a monotonically increasing column such as a timestamp or id and an initial value for this column. An incremental sync will import rows where the value is greater than or equal to the largest already imported.\cb1 \
+\cb3 When incremental is enabled, you can use the\'a0
+\f4\fs23\fsmilli11667 \cb12 ?
+\f0\fs28 \cb3 \'a0character to reference the incremental state value when constructing your query. Normally this would be used in a WHERE clause or similar filter applied in order to only sync data with an incremental column value larger than the previously observed maximum value stored in the incremental state.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf20 \strokec20 \
+\cb21 Preview loaded successfully. Select a column from the dropdown below.\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 YEAR_MONTH\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 LONG\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 202301\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb7 \strokec4 View 5 more settings\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb3 \strokec4 Build policy\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0 \cf4 \cb7 Edit\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 Control when your Sync is allowed to run.\cf6 \cb1 \strokec6 \
+\pard\pardeftab720\qc\partightenfactor0
+
+\fs24 \cf20 \cb21 \strokec20 Always\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+}

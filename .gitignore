@@ -18,3 +18,10 @@ config.py
 
 # MCP config (contains tokens and machine-specific paths)
 .mcp.json
+
+# Codex config (may contain tokens)
+.codex/
+
+# Playwright ephemeral artifacts
+.playwright-mcp/
+.playwright-cli/

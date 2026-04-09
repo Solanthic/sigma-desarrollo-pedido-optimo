@@ -36,7 +36,7 @@ npm install
 
 ## When invoked as `/pdf`
 
-1. The user provides a markdown file path as the argument (e.g., `/pdf context/NOTA_PARA_ENRIQUE.md`)
+1. The user provides a markdown file path as the argument (e.g., `/pdf tasks/2026-04-08-nota-enrique/NOTA_PARA_ENRIQUE.md`)
 2. Run `node scripts/md-to-pdf.mjs <path>` to generate the PDF
 3. If it fails with a missing module error, run `npm install` first, then retry
 4. Report the output file path to the user when done

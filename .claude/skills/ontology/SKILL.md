@@ -61,8 +61,8 @@ Always cite what you found: "According to the Palantir docs on [topic], ..."
 ### Getting Started
 
 1. **Check for existing ontology** — look for `ontology/` folder with YAML files
-2. **Read project context** — look for documentation in `context/`, discovery docs, table inventories, notebooks, SQL files
-3. **Read the agent prompt** at `scripts/ontology-agent.md` if it exists (YAML schema conventions)
+2. **Read project context** — look for documentation in `data/readiness/`, `data/logic/`, `reference/` for discovery docs, table inventories, notebooks, SQL files
+3. **Read the agent prompt** at `agents/ontology-batch.md` if it exists (YAML schema conventions)
 4. **Understand the user's intent** — creating from scratch, reviewing existing, or extending
 
 Then start the conversation.

@@ -24,7 +24,7 @@ This document maps all 44 static CSV/Excel files in the Foundry `Sqls_muestras` 
 
 ## Part 1: Known Pipeline Tables (T01-T19)
 
-These are documented in `context/TABLE_INVENTORY.md`. Status column shows Snowflake availability.
+These are documented in `data/readiness/TABLE_INVENTORY.md`. Status column shows Snowflake availability.
 
 | # | CSV File | Pipeline ID | Role | Snowflake Status |
 |---|---|---|---|---|

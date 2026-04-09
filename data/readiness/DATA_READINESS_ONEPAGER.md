@@ -136,4 +136,4 @@ Mientras esperamos la resolucion de los bloqueantes, podemos avanzar en Foundry 
 
 ---
 
-*Detalle tecnico completo: `context/DATA_READINESS_REPORT.md` | Formulas: `context/COMPUTATION_GRAPH.md` | Mapeo de datasets: `context/DATASET_MAPPING.md`*
+*Detalle tecnico completo: `data/readiness/DATA_READINESS_REPORT.md` | Formulas: `data/logic/COMPUTATION_GRAPH.md` | Mapeo de datasets: `data/readiness/DATASET_MAPPING.md`*

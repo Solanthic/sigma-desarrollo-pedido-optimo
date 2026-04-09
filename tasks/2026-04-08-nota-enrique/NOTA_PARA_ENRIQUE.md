@@ -634,4 +634,4 @@ Este trabajo esta en curso y alimentara la configuracion del Gestor de Politicas
 
 ---
 
-*Detalle tecnico: `context/DATA_READINESS_REPORT.md` | Formulas: `context/COMPUTATION_GRAPH.md` | Ontologia: `ontology/OVERVIEW.md`*
+*Detalle tecnico: `data/readiness/DATA_READINESS_REPORT.md` | Formulas: `data/logic/COMPUTATION_GRAPH.md` | Ontologia: `ontology/OVERVIEW.md`*

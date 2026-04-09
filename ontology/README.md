@@ -14,7 +14,7 @@ ontology/
 
 ## How to read
 
-Each YAML file follows the schema defined in `scripts/ontology-agent.md`. Key fields:
+Each YAML file follows the schema defined in `agents/ontology-batch.md`. Key fields:
 
 - **apiName**: The programmatic identifier used in Foundry (PascalCase for objects, camelCase for properties/links/actions)
 - **primaryKey**: The unique identifier property for each object
@@ -26,7 +26,7 @@ Each YAML file follows the schema defined in `scripts/ontology-agent.md`. Key fi
 
 1. Edit the YAML files directly
 2. Run `/ontology` in Claude Code to interactively refine
-3. Use the agent prompt at `scripts/ontology-agent.md` for batch regeneration
+3. Use the agent prompt at `agents/ontology-batch.md` for batch regeneration
 
 ## Object lifecycle classification
 
