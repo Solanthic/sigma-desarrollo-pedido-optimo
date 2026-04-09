@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node scripts/md-to-pdf.mjs"
+  },
+  "dependencies": {
+    "@playwright/mcp": "^0.0.31",
+    "marked": "^15.0.0",
+    "playwright": "^1.52.0"
+  }
+}
