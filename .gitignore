@@ -1,0 +1,20 @@
+# Secrets
+.secrets/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env
+config.py
+
+# MCP config (contains tokens and machine-specific paths)
+.mcp.json
