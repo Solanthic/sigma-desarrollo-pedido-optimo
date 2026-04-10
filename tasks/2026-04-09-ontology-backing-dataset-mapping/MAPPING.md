@@ -506,5 +506,7 @@ The core assignment data comes from `IND_MERMAS_AUTOS_CAT_ACTIVO_TIENDA` (10K ro
 8. Build PromotionalGrid, PendingNote backing
 
 ### Needs discussion with Sigma
-9. **Promotion source** — which IND dataset will carry DESCRIPCION and PRECIO_SUGERIDO?
-10. **PendingNote SAP column** — is SUBSIDIARIA the same as SAP code?
+9. **Customer Order Submission data** — The legacy pipeline reads retailer orders from MySQL (`proyeccion_detalle_pedidos`: FECHA, ID_CADENA, PIEZAS_PEDIDO, SAP, SKU, USER). This is what chains submit before SAP processing. Currently in SOP_PROYECCION_DETALLE_PEDIDOS (108K rows) but that's the legacy MySQL system. **Where will this live in the new architecture?** Needed for: comparing recommended vs actual orders, tracking what was submitted vs what was loaded to SAP.
+10. **Promotion source** — which IND dataset will carry DESCRIPCION and PRECIO_SUGERIDO?
+11. **PendingNote SAP column** — is SUBSIDIARIA the same as SAP code?
+12. **SellIn clarification** — exact difference between TBL_RM_CTX and SHARING_SELLIN

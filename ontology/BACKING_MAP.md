@@ -50,9 +50,10 @@ Mapped during ontology backing dataset investigation (2026-04-09). Full detail i
 ## Known Gaps
 
 1. **Shipment/Transit**: T19 (`transitos.csv`) needs Sigma to pull from SAP → Snowflake → Foundry
-2. **SellIn clarification**: Need to understand difference between TBL_RM_CTX and SHARING_SELLIN
-3. **SellOut cap**: IND_MERMAS_AUTOS_CABECERAS_OH_SCAN has only 10K rows — investigate if sync is capped
-4. **Empty IND datasets**: Store catalog, Product catalog, and several others await Sigma population
+2. **Customer Order Submission**: Legacy uses `proyeccion_detalle_pedidos` from MySQL (FECHA, ID_CADENA, PIEZAS_PEDIDO, SAP, SKU, USER). No IND equivalent exists. **Ask Sigma: where will retailer order submissions live in the new architecture?** Needed for comparing recommended vs actual orders.
+3. **SellIn clarification**: Need to understand difference between TBL_RM_CTX and SHARING_SELLIN
+4. **SellOut cap**: IND_MERMAS_AUTOS_CABECERAS_OH_SCAN has only 10K rows — investigate if sync is capped
+5. **Empty IND datasets**: Store catalog, Product catalog, and several others await Sigma population
 
 ## Source
 - [Task](../tasks/2026-04-09-ontology-backing-dataset-mapping/TASK.md)
